@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/docs/overview/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/pc/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/server/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/overview/what_channel/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/news/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/releases/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/import-sdk/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/intro/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/message_send/text/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/import-sdk/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/init/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/init/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/message_send/image/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/login/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/message_send/voice/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/connect/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/message/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/chat_delegate/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/message_send/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/conversation/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/conversation/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/conversation/reminder/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/history/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/history/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/channel/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/channel/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/channel_provider/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/channel_provider/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/offline_msg/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/offline_msg/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/advanced/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/advanced/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/advanced/custom_message/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/advanced/custom_message/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/advanced/cmd/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/advanced/cmd/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/advanced/mention/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/advanced/mention/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/advanced/revoke/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/advanced/revoke/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2018/10/06/easy-documentation-with-docsy/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2018/10/06/the-second-blog-post/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2018/01/04/another-great-release/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/index.json</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/community/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/search/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+</urlset>
