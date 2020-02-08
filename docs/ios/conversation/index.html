@@ -65,37 +65,7 @@
 				
 				
 				
-				<a class="nav-link" href="/about/" ><span>About</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
 				<a class="nav-link active" href="/docs/" ><span class="active">狸猫IM文档</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
-				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
-				<a class="nav-link" href="/community/" ><span>Community</span></a>
 			</li>
 			
 			
@@ -465,19 +435,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedcmd" href="/docs/ios/advanced/cmd/">命令消息</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedmention" href="/docs/ios/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedrevoke" href="/docs/ios/advanced/revoke/">消息撤回</a>
       
       
     </li>
@@ -624,42 +582,41 @@
 
 </div>
 
-<p>最近会话在LiMaoIMSDK中用LIMConversation类表示,下面展示最近会话的一些关键字段</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C"><span style="color:#8f5902;font-style:italic">// 添加委托
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMSDK</span> <span style="color:#000">shared</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">conversationManager</span> <span style="color:#f57900">addDelegate</span><span style="color:#000;font-weight:bold">:</span><span style="color:#204a87">self</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div><p>最近会话的委托协议 LIMConversationManagerDelegate</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C">
-<span style="color:#204a87;font-weight:bold">@interface</span> <span style="color:#000">LIMConversation</span> : <span style="color:#000">NSObject</span>
 <span style="color:#000;font-weight:bold">.</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000;font-weight:bold">.</span>
-<span style="color:#8f5902;font-style:italic">/**
-</span><span style="color:#8f5902;font-style:italic"> 最近会话对应的频道，一个最近会话一定对应一个频道。
-</span><span style="color:#8f5902;font-style:italic"> */</span>
-<span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">strong</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">LIMChannel</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">channel</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#8f5902;font-style:italic">/**
-</span><span style="color:#8f5902;font-style:italic"> 最近会话的标题（个人频道则为用户昵称，群频道为群名字）
-</span><span style="color:#8f5902;font-style:italic"> */</span>
-<span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">copy</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">NSString</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">title</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#8f5902;font-style:italic">/**
-</span><span style="color:#8f5902;font-style:italic"> 最近会话显示的头像（个人频道则为用户头像，群频道为群头像）
-</span><span style="color:#8f5902;font-style:italic"> */</span>
-<span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">copy</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">NSString</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">avatar</span><span style="color:#000;font-weight:bold">;</span>
 
 <span style="color:#8f5902;font-style:italic">/**
-</span><span style="color:#8f5902;font-style:italic"> 最后一条消息
+</span><span style="color:#8f5902;font-style:italic">  当最近会话被新增的时候会调用此方法
+</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"> @param conversation 最近会话对象
+</span><span style="color:#8f5902;font-style:italic"> @param left 会话剩余数量 UI层可以判断left == 0 的时候才刷新 避免频繁刷新UI导致卡顿
 </span><span style="color:#8f5902;font-style:italic"> */</span>
-<span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">strong</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">LIMMessage</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">lastMessage</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#ce5c00;font-weight:bold">-</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">)</span><span style="color:#f57900">onConversationAdd</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIMConversation</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">conversation</span> <span style="color:#f57900">left</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSInteger</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">left</span><span style="color:#000;font-weight:bold">;</span>
 
 
 <span style="color:#8f5902;font-style:italic">/**
-</span><span style="color:#8f5902;font-style:italic"> 未读消息数量
+</span><span style="color:#8f5902;font-style:italic"> 当最近会话对象更新的时候会调用此方法
+</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"> @param conversation 最近会话对象
+</span><span style="color:#8f5902;font-style:italic"> @param left 会话剩余数量 UI层可以判断left == 0 的时候才刷新 避免频繁刷新UI导致卡顿
 </span><span style="color:#8f5902;font-style:italic"> */</span>
-<span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">assign</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">NSInteger</span> <span style="color:#000">unreadCount</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">-</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">onConversationUpdate:</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIMConversation</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">conversation</span> <span style="color:#000">left:</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSInteger</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">left</span><span style="color:#000;font-weight:bold">;</span>
 
 <span style="color:#8f5902;font-style:italic">/**
-</span><span style="color:#8f5902;font-style:italic"> 扩展数据（仅本地有效） 
+</span><span style="color:#8f5902;font-style:italic"> 最近会话未读数发送改变
+</span><span style="color:#8f5902;font-style:italic"> 
+</span><span style="color:#8f5902;font-style:italic"> @param channel 频道
+</span><span style="color:#8f5902;font-style:italic"> @param unreadCount 未读数量
 </span><span style="color:#8f5902;font-style:italic"> */</span>
-<span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">strong</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">NSDictionary</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">extra</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">-</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">onConversationUnreadCountUpdate:</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIMChannel</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">channel</span> <span style="color:#000">unreadCount:</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSInteger</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">unreadCount</span><span style="color:#000;font-weight:bold">;</span>
 
 <span style="color:#000;font-weight:bold">.</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000;font-weight:bold">.</span>
 
-<span style="color:#204a87;font-weight:bold">@end</span>
+</code></pre></div><p>查询所有最近会话数据</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C"><span style="color:#000">NSArray</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">LIMConversation</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">conversations</span> <span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMSDK</span> <span style="color:#000">shared</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">conversationManager</span> <span style="color:#000">getConversationList</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
 
 </code></pre></div>
         <div class="section-index">
@@ -720,10 +677,6 @@
                     </h5>
                     <p></p>
                 </div>
-            
-        
-            
-        
             
         
             
@@ -823,7 +776,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/a464e5065069db34c705dc1d6c8d385de42831c8">更新文档 (a464e50)</a>
 </div>
 </div>
 
@@ -896,7 +849,7 @@
         <small class="text-white">&copy; 2020 The Docsy Authors </small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank"></a></small>
 	
-		<p class="mt-2"><a href="/about/">About 狸猫IM</a></p>
+		
 	
       </div>
     </div>

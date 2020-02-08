@@ -21,22 +21,25 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>离线消息对接 | 狸猫IM</title><meta property="og:title" content="离线消息对接" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="如果没有设置离线提供者时，SDK只或收到在线消息。离线消息提供者设置如下:
+// 离线消息提供者  [[LIMSDK shared] setOfflineMessageProvider:^(int limit, uint32_t messageSeq, LIMOfflineMessageCallback _Nonnull callback) { // 请求服务器同步消息  // max_message_seq: 为当前客户端的最大消息序列号, 接口只会返回大于此序列号的消息  // limit:每次同步的消息数量  [[LIMAPIClient sharedClient] POST:[NSString stringWithFormat:@&#34;message/sync&#34;] parameters:@{@&#34;max_message_seq&#34;:@(messageSeq),@&#34;limit&#34;:@(limit)}].then(^(NSArray&lt;NSDictionary*&gt;* messageDicts){ NSMutableArray *messages = [[NSMutableArray alloc] init]; if(messageDicts &amp;&amp; messageDicts.count&gt;0) { for (NSDictionary *messageDict in messageDicts) { [messages addObject:[self toMessage:messageDict]]; } callback(messages,true,nil); // 这里不能判断返回数据小于limit(count&gt;=limit)就没有更多了, 因为有可能服务器遇到解析不出消息里的payload而服务器会丢掉此消息 这样返回数据小于limit但是服务器还有离线消息  }else { callback(messages,false,nil); } }).catch(^(NSError *err){ LIMLogError(@&#34;拉去离线消息失败！-&gt; %@&#34;,err); callback(nil,false,err); }); } offlineMessagesAck:^(uint32_t messageSeq, void (^ _Nonnull complete)(NSError *error)) { // 离线消息ACk回执  // 告诉服务器客户端最后一次同步到的消息序列号 messageSeq  [[LIMAPIClient sharedClient] POST:[NSString stringWithFormat:@&#34;message/syncack/%d&#34;,messageSeq] parameters:nil]." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/ios/offline_msg/" />
 <meta property="article:published_time" content="2020-02-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-08T00:35:38+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2020-02-08T18:49:47+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="离线消息对接">
-<meta itemprop="description" content="">
+<meta itemprop="description" content="如果没有设置离线提供者时，SDK只或收到在线消息。离线消息提供者设置如下:
+// 离线消息提供者  [[LIMSDK shared] setOfflineMessageProvider:^(int limit, uint32_t messageSeq, LIMOfflineMessageCallback _Nonnull callback) { // 请求服务器同步消息  // max_message_seq: 为当前客户端的最大消息序列号, 接口只会返回大于此序列号的消息  // limit:每次同步的消息数量  [[LIMAPIClient sharedClient] POST:[NSString stringWithFormat:@&#34;message/sync&#34;] parameters:@{@&#34;max_message_seq&#34;:@(messageSeq),@&#34;limit&#34;:@(limit)}].then(^(NSArray&lt;NSDictionary*&gt;* messageDicts){ NSMutableArray *messages = [[NSMutableArray alloc] init]; if(messageDicts &amp;&amp; messageDicts.count&gt;0) { for (NSDictionary *messageDict in messageDicts) { [messages addObject:[self toMessage:messageDict]]; } callback(messages,true,nil); // 这里不能判断返回数据小于limit(count&gt;=limit)就没有更多了, 因为有可能服务器遇到解析不出消息里的payload而服务器会丢掉此消息 这样返回数据小于limit但是服务器还有离线消息  }else { callback(messages,false,nil); } }).catch(^(NSError *err){ LIMLogError(@&#34;拉去离线消息失败！-&gt; %@&#34;,err); callback(nil,false,err); }); } offlineMessagesAck:^(uint32_t messageSeq, void (^ _Nonnull complete)(NSError *error)) { // 离线消息ACk回执  // 告诉服务器客户端最后一次同步到的消息序列号 messageSeq  [[LIMAPIClient sharedClient] POST:[NSString stringWithFormat:@&#34;message/syncack/%d&#34;,messageSeq] parameters:nil].">
 <meta itemprop="datePublished" content="2020-02-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-02-08T00:35:38&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2020-02-08T18:49:47&#43;08:00" />
+<meta itemprop="wordCount" content="95">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="离线消息对接"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="如果没有设置离线提供者时，SDK只或收到在线消息。离线消息提供者设置如下:
+// 离线消息提供者  [[LIMSDK shared] setOfflineMessageProvider:^(int limit, uint32_t messageSeq, LIMOfflineMessageCallback _Nonnull callback) { // 请求服务器同步消息  // max_message_seq: 为当前客户端的最大消息序列号, 接口只会返回大于此序列号的消息  // limit:每次同步的消息数量  [[LIMAPIClient sharedClient] POST:[NSString stringWithFormat:@&#34;message/sync&#34;] parameters:@{@&#34;max_message_seq&#34;:@(messageSeq),@&#34;limit&#34;:@(limit)}].then(^(NSArray&lt;NSDictionary*&gt;* messageDicts){ NSMutableArray *messages = [[NSMutableArray alloc] init]; if(messageDicts &amp;&amp; messageDicts.count&gt;0) { for (NSDictionary *messageDict in messageDicts) { [messages addObject:[self toMessage:messageDict]]; } callback(messages,true,nil); // 这里不能判断返回数据小于limit(count&gt;=limit)就没有更多了, 因为有可能服务器遇到解析不出消息里的payload而服务器会丢掉此消息 这样返回数据小于limit但是服务器还有离线消息  }else { callback(messages,false,nil); } }).catch(^(NSError *err){ LIMLogError(@&#34;拉去离线消息失败！-&gt; %@&#34;,err); callback(nil,false,err); }); } offlineMessagesAck:^(uint32_t messageSeq, void (^ _Nonnull complete)(NSError *error)) { // 离线消息ACk回执  // 告诉服务器客户端最后一次同步到的消息序列号 messageSeq  [[LIMAPIClient sharedClient] POST:[NSString stringWithFormat:@&#34;message/syncack/%d&#34;,messageSeq] parameters:nil]."/>
 
 
 
@@ -72,37 +75,7 @@
 				
 				
 				
-				<a class="nav-link" href="/about/" ><span>About</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
 				<a class="nav-link active" href="/docs/" ><span class="active">狸猫IM文档</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
-				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
-				<a class="nav-link" href="/community/" ><span>Community</span></a>
 			</li>
 			
 			
@@ -472,19 +445,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedcmd" href="/docs/ios/advanced/cmd/">命令消息</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedmention" href="/docs/ios/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedrevoke" href="/docs/ios/advanced/revoke/">消息撤回</a>
       
       
     </li>
@@ -623,7 +584,44 @@
 <div class="td-content">
 	<h1>离线消息对接</h1>
 	
-	
+	<p>如果没有设置离线提供者时，SDK只或收到在线消息。离线消息提供者设置如下:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C"> <span style="color:#8f5902;font-style:italic">// 离线消息提供者
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMSDK</span> <span style="color:#000">shared</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">setOfflineMessageProvider</span><span style="color:#000;font-weight:bold">:</span><span style="color:#ce5c00;font-weight:bold">^</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">limit</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">uint32_t</span> <span style="color:#000">messageSeq</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LIMOfflineMessageCallback</span>  <span style="color:#000">_Nonnull</span> <span style="color:#000">callback</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+
+        <span style="color:#8f5902;font-style:italic">// 请求服务器同步消息  
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// max_message_seq: 为当前客户端的最大消息序列号, 接口只会返回大于此序列号的消息 
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// limit:每次同步的消息数量
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMAPIClient</span> <span style="color:#000">sharedClient</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">POST</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">NSString</span> <span style="color:#f57900">stringWithFormat</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">message/sync</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">@{</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">max_message_seq</span><span style="color:#4e9a06">&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">@(</span><span style="color:#000">messageSeq</span><span style="color:#000">)</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">limit</span><span style="color:#4e9a06">&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#000">@(</span><span style="color:#000">limit</span><span style="color:#000">)</span><span style="color:#000">}</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">then</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">^</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSArray</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">NSDictionary</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#ce5c00;font-weight:bold">&gt;</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">messageDicts</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#000">NSMutableArray</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">messages</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">NSMutableArray</span> <span style="color:#000">alloc</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#000">init</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">messageDicts</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#000">messageDicts</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">count</span><span style="color:#ce5c00;font-weight:bold">&gt;</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+                <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSDictionary</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">messageDict</span>  <span style="color:#204a87;font-weight:bold">in</span> <span style="color:#000">messageDicts</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+                    <span style="color:#000;font-weight:bold">[</span><span style="color:#000">messages</span> <span style="color:#f57900">addObject</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000;font-weight:bold">[</span><span style="color:#204a87">self</span> <span style="color:#f57900">toMessage</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">messageDict</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+                <span style="color:#000;font-weight:bold">}</span>
+                <span style="color:#000">callback</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">messages</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87">nil</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// 这里不能判断返回数据小于limit(count&gt;=limit)就没有更多了, 因为有可能服务器遇到解析不出消息里的payload而服务器会丢掉此消息 这样返回数据小于limit但是服务器还有离线消息
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000;font-weight:bold">}</span><span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+                <span style="color:#000">callback</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">messages</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87">nil</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+            <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">catch</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">^</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSError</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">err</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#000">LIMLogError</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">拉去离线消息失败！-&gt; %@</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">err</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+            <span style="color:#000">callback</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">nil</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">err</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#f57900">offlineMessagesAck</span><span style="color:#000;font-weight:bold">:</span><span style="color:#ce5c00;font-weight:bold">^</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint32_t</span> <span style="color:#000">messageSeq</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">^</span> <span style="color:#000">_Nonnull</span> <span style="color:#000">complete</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSError</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">error</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#8f5902;font-style:italic">// 离线消息ACk回执
+</span><span style="color:#8f5902;font-style:italic"></span>
+        <span style="color:#8f5902;font-style:italic">// 告诉服务器客户端最后一次同步到的消息序列号 messageSeq
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMAPIClient</span> <span style="color:#000">sharedClient</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">POST</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">NSString</span> <span style="color:#f57900">stringWithFormat</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">message/syncack/%d</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">messageSeq</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">parameters</span><span style="color:#000;font-weight:bold">:</span><span style="color:#204a87">nil</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">then</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">^</span><span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">complete</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+                <span style="color:#000">complete</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">nil</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+            <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">catch</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">^</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSError</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">err</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#000">LIMLogError</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">离线消息回执失败！-&gt; %@</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">err</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">complete</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+                <span style="color:#000">complete</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">err</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+            <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+
+    <span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -686,7 +684,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/a464e5065069db34c705dc1d6c8d385de42831c8">更新文档 (a464e50)</a>
 </div>
 </div>
 
@@ -760,7 +758,7 @@
         <small class="text-white">&copy; 2020 The Docsy Authors </small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank"></a></small>
 	
-		<p class="mt-2"><a href="/about/">About 狸猫IM</a></p>
+		
 	
       </div>
     </div>

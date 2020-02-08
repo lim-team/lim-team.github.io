@@ -21,20 +21,23 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>自定义消息 | 狸猫IM</title><meta property="og:title" content="自定义消息" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="为了更好的满足大部分需求，狸猫IM提供自定义消息。自定义消息分三部走，这里以自定义一个GIF消息举例
+ 继承LIMMessageContent和定义消息的字段  @interface LIMGIFContent : LIMMessageContent //GIF的地址 @property(nonatomic,copy) NSString *url; // GIF图片宽度 @property(nonatomic,assign) NSInteger width; // GIF图片高度 @property(nonatomic,assign) NSInteger height; @end 实现消息的编码和解码  @implementation LIMGIFContent // 解码消息 - (void)decodeWithJSON:(NSDictionary *)contentDic { self.url = contentDic[@&#34;url&#34;]; self.width = contentDic[@&#34;width&#34;]?[contentDic[@&#34;width&#34;] integerValue]:100; self.height = contentDic[@&#34;height&#34;]?[contentDic[@&#34;height&#34;] integerValue]:100; } // 编码消息 - (NSDictionary *)encodeWithJSON { NSMutableDictionary *dataDict = [NSMutableDictionary dictionary]; [dataDict setObject:self.url?:@&#34;&#34; forKey:@&#34;url&#34;]; [dataDict setObject:@(self.width) forKey:@&#34;width&#34;]; [dataDict setObject:@(self.height) forKey:@&#34;height&#34;]; return dataDict; } // 指定消息的正文类型 &#43;(NSInteger) contentType { return LIM_GIF; } @end 注册消息  [[LIMSDK shared] registerMessageContent:LIMGIFContent." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/ios/advanced/custom_message/" />
-<meta property="article:modified_time" content="2020-02-08T00:35:38+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2020-02-08T18:49:47+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="自定义消息">
-<meta itemprop="description" content="">
-<meta itemprop="dateModified" content="2020-02-08T00:35:38&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="description" content="为了更好的满足大部分需求，狸猫IM提供自定义消息。自定义消息分三部走，这里以自定义一个GIF消息举例
+ 继承LIMMessageContent和定义消息的字段  @interface LIMGIFContent : LIMMessageContent //GIF的地址 @property(nonatomic,copy) NSString *url; // GIF图片宽度 @property(nonatomic,assign) NSInteger width; // GIF图片高度 @property(nonatomic,assign) NSInteger height; @end 实现消息的编码和解码  @implementation LIMGIFContent // 解码消息 - (void)decodeWithJSON:(NSDictionary *)contentDic { self.url = contentDic[@&#34;url&#34;]; self.width = contentDic[@&#34;width&#34;]?[contentDic[@&#34;width&#34;] integerValue]:100; self.height = contentDic[@&#34;height&#34;]?[contentDic[@&#34;height&#34;] integerValue]:100; } // 编码消息 - (NSDictionary *)encodeWithJSON { NSMutableDictionary *dataDict = [NSMutableDictionary dictionary]; [dataDict setObject:self.url?:@&#34;&#34; forKey:@&#34;url&#34;]; [dataDict setObject:@(self.width) forKey:@&#34;width&#34;]; [dataDict setObject:@(self.height) forKey:@&#34;height&#34;]; return dataDict; } // 指定消息的正文类型 &#43;(NSInteger) contentType { return LIM_GIF; } @end 注册消息  [[LIMSDK shared] registerMessageContent:LIMGIFContent.">
+<meta itemprop="dateModified" content="2020-02-08T18:49:47&#43;08:00" />
+<meta itemprop="wordCount" content="79">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="自定义消息"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="为了更好的满足大部分需求，狸猫IM提供自定义消息。自定义消息分三部走，这里以自定义一个GIF消息举例
+ 继承LIMMessageContent和定义消息的字段  @interface LIMGIFContent : LIMMessageContent //GIF的地址 @property(nonatomic,copy) NSString *url; // GIF图片宽度 @property(nonatomic,assign) NSInteger width; // GIF图片高度 @property(nonatomic,assign) NSInteger height; @end 实现消息的编码和解码  @implementation LIMGIFContent // 解码消息 - (void)decodeWithJSON:(NSDictionary *)contentDic { self.url = contentDic[@&#34;url&#34;]; self.width = contentDic[@&#34;width&#34;]?[contentDic[@&#34;width&#34;] integerValue]:100; self.height = contentDic[@&#34;height&#34;]?[contentDic[@&#34;height&#34;] integerValue]:100; } // 编码消息 - (NSDictionary *)encodeWithJSON { NSMutableDictionary *dataDict = [NSMutableDictionary dictionary]; [dataDict setObject:self.url?:@&#34;&#34; forKey:@&#34;url&#34;]; [dataDict setObject:@(self.width) forKey:@&#34;width&#34;]; [dataDict setObject:@(self.height) forKey:@&#34;height&#34;]; return dataDict; } // 指定消息的正文类型 &#43;(NSInteger) contentType { return LIM_GIF; } @end 注册消息  [[LIMSDK shared] registerMessageContent:LIMGIFContent."/>
 
 
 
@@ -70,37 +73,7 @@
 				
 				
 				
-				<a class="nav-link" href="/about/" ><span>About</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
 				<a class="nav-link active" href="/docs/" ><span class="active">狸猫IM文档</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
-				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
-				<a class="nav-link" href="/community/" ><span>Community</span></a>
 			</li>
 			
 			
@@ -470,19 +443,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedcmd" href="/docs/ios/advanced/cmd/">命令消息</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedmention" href="/docs/ios/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedrevoke" href="/docs/ios/advanced/revoke/">消息撤回</a>
       
       
     </li>
@@ -631,7 +592,51 @@
 <div class="td-content">
 	<h1>自定义消息</h1>
 	
-	
+	<p>为了更好的满足大部分需求，狸猫IM提供自定义消息。自定义消息分三部走，这里以自定义一个GIF消息举例</p>
+<ol>
+<li>继承LIMMessageContent和定义消息的字段</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C"><span style="color:#204a87;font-weight:bold">@interface</span> <span style="color:#000">LIMGIFContent</span> : <span style="color:#000">LIMMessageContent</span>
+<span style="color:#8f5902;font-style:italic">//GIF的地址
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">copy</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">NSString</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">url</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#8f5902;font-style:italic">// GIF图片宽度
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">assign</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">NSInteger</span> <span style="color:#000">width</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#8f5902;font-style:italic">// GIF图片高度
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">@property</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">nonatomic</span><span style="color:#000;font-weight:bold">,</span><span style="color:#204a87;font-weight:bold">assign</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">NSInteger</span> <span style="color:#000">height</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">@end</span>
+</code></pre></div><ol start="2">
+<li>实现消息的编码和解码</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C"><span style="color:#204a87;font-weight:bold">@implementation</span> <span style="color:#000">LIMGIFContent</span>
+
+<span style="color:#8f5902;font-style:italic">// 解码消息
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">-</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">decodeWithJSON:</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSDictionary</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">contentDic</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87">self</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">url</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">contentDic</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">url</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87">self</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">width</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">contentDic</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">width</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">?</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">contentDic</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">width</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#000">integerValue</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87">self</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">height</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">contentDic</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">height</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">?</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">contentDic</span><span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">height</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#000">integerValue</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">// 编码消息
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">-</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSDictionary</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">encodeWithJSON</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">NSMutableDictionary</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">dataDict</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000">NSMutableDictionary</span> <span style="color:#000">dictionary</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">[</span><span style="color:#000">dataDict</span> <span style="color:#f57900">setObject</span><span style="color:#000;font-weight:bold">:</span><span style="color:#204a87">self</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">url</span><span style="color:#ce5c00;font-weight:bold">?</span><span style="color:#ce5c00;font-weight:bold">:</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">&#34;</span> <span style="color:#f57900">forKey</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">url</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">[</span><span style="color:#000">dataDict</span> <span style="color:#f57900">setObject</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">@(</span><span style="color:#204a87">self</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">width</span><span style="color:#000">)</span> <span style="color:#f57900">forKey</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">width</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">[</span><span style="color:#000">dataDict</span> <span style="color:#f57900">setObject</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">@(</span><span style="color:#204a87">self</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">height</span><span style="color:#000">)</span> <span style="color:#f57900">forKey</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">height</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">dataDict</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">// 指定消息的正文类型
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">+</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">NSInteger</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">contentType</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">LIM_GIF</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">@end</span>
+</code></pre></div><ol start="3">
+<li>注册消息</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C"><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMSDK</span> <span style="color:#000">shared</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">registerMessageContent</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LIMGIFContent</span><span style="color:#000;font-weight:bold">.</span><span style="color:#204a87;font-weight:bold">class</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div><pre><code>如果使用了狸猫IM的UI库，则具体定义消息UI的流程搜索LIMGIFContent和LIMGIFMessageCell查看具体代码
+</code></pre>
 	
 		<style>
   .feedback--answer {
@@ -694,7 +699,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/a464e5065069db34c705dc1d6c8d385de42831c8">更新文档 (a464e50)</a>
 </div>
 </div>
 
@@ -768,7 +773,7 @@
         <small class="text-white">&copy; 2020 The Docsy Authors </small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank"></a></small>
 	
-		<p class="mt-2"><a href="/about/">About 狸猫IM</a></p>
+		
 	
       </div>
     </div>

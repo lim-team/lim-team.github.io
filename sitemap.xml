@@ -33,16 +33,6 @@
   </url>
   
   <url>
-    <loc>/blog/news/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/releases/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/docs/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
@@ -119,7 +109,7 @@
   
   <url>
     <loc>/docs/ios/conversation/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-02-08T18:49:47+08:00</lastmod>
   </url>
   
   <url>
@@ -134,7 +124,7 @@
   
   <url>
     <loc>/docs/ios/history/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-02-08T18:49:47+08:00</lastmod>
   </url>
   
   <url>
@@ -144,7 +134,7 @@
   
   <url>
     <loc>/docs/ios/channel/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-02-08T18:49:47+08:00</lastmod>
   </url>
   
   <url>
@@ -154,7 +144,7 @@
   
   <url>
     <loc>/docs/ios/channel_provider/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-02-08T18:49:47+08:00</lastmod>
   </url>
   
   <url>
@@ -164,7 +154,7 @@
   
   <url>
     <loc>/docs/ios/offline_msg/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-02-08T18:49:47+08:00</lastmod>
   </url>
   
   <url>
@@ -184,16 +174,11 @@
   
   <url>
     <loc>/docs/ios/advanced/custom_message/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-02-08T18:49:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/android/advanced/cmd/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/ios/advanced/cmd/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
   
@@ -204,7 +189,7 @@
   
   <url>
     <loc>/docs/ios/advanced/mention/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-02-08T18:49:47+08:00</lastmod>
   </url>
   
   <url>
@@ -213,42 +198,7 @@
   </url>
   
   <url>
-    <loc>/docs/ios/advanced/revoke/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/2018/10/06/easy-documentation-with-docsy/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/2018/10/06/the-second-blog-post/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/2018/01/04/another-great-release/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/index.json</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/community/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
   

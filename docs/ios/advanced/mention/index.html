@@ -21,20 +21,20 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>@消息 | 狸猫IM</title><meta property="og:title" content="@消息" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="// @指定用户 mentionedInfo = [[LIMMentionedInfo alloc] initWithMentionedType:LIM_Mentioned_Users uids:@[@&#34;uid1&#34;,@&#34;uid2&#34;]]; // @所有用户 //mentionedInfo = [[LIMMentionedInfo alloc] initWithMentionedType:LIM_Mentioned_ALL];  LIMTextContent *content = [[LIMTextContent alloc] initWithContent:text]; content.mentionedInfo = mentionedInfo; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/ios/advanced/mention/" />
-<meta property="article:modified_time" content="2020-02-08T00:35:38+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2020-02-08T18:49:47+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="@消息">
-<meta itemprop="description" content="">
-<meta itemprop="dateModified" content="2020-02-08T00:35:38&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="description" content="// @指定用户 mentionedInfo = [[LIMMentionedInfo alloc] initWithMentionedType:LIM_Mentioned_Users uids:@[@&#34;uid1&#34;,@&#34;uid2&#34;]]; // @所有用户 //mentionedInfo = [[LIMMentionedInfo alloc] initWithMentionedType:LIM_Mentioned_ALL];  LIMTextContent *content = [[LIMTextContent alloc] initWithContent:text]; content.mentionedInfo = mentionedInfo; ">
+<meta itemprop="dateModified" content="2020-02-08T18:49:47&#43;08:00" />
+<meta itemprop="wordCount" content="24">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="@消息"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="// @指定用户 mentionedInfo = [[LIMMentionedInfo alloc] initWithMentionedType:LIM_Mentioned_Users uids:@[@&#34;uid1&#34;,@&#34;uid2&#34;]]; // @所有用户 //mentionedInfo = [[LIMMentionedInfo alloc] initWithMentionedType:LIM_Mentioned_ALL];  LIMTextContent *content = [[LIMTextContent alloc] initWithContent:text]; content.mentionedInfo = mentionedInfo; "/>
 
 
 
@@ -70,37 +70,7 @@
 				
 				
 				
-				<a class="nav-link" href="/about/" ><span>About</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
 				<a class="nav-link active" href="/docs/" ><span class="active">狸猫IM文档</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
-				<a class="nav-link" href="/blog/" ><span>Blog</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
-				<a class="nav-link" href="/community/" ><span>Community</span></a>
 			</li>
 			
 			
@@ -470,19 +440,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedcmd" href="/docs/ios/advanced/cmd/">命令消息</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsiosadvancedmention" href="/docs/ios/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedrevoke" href="/docs/ios/advanced/revoke/">消息撤回</a>
       
       
     </li>
@@ -631,7 +589,14 @@
 <div class="td-content">
 	<h1>@消息</h1>
 	
-	
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C"><span style="color:#8f5902;font-style:italic">// @指定用户
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">mentionedInfo</span> <span style="color:#ce5c00;font-weight:bold">=</span>  <span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMMentionedInfo</span> <span style="color:#000">alloc</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">initWithMentionedType</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LIM_Mentioned_Users</span> <span style="color:#f57900">uids</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">@[</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">uid1</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">uid2</span><span style="color:#4e9a06">&#34;</span><span style="color:#000">]</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#8f5902;font-style:italic">// @所有用户
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">//mentionedInfo =  [[LIMMentionedInfo alloc] initWithMentionedType:LIM_Mentioned_ALL];
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#000">LIMTextContent</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">content</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMTextContent</span> <span style="color:#000">alloc</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">initWithContent</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">text</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000">content</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">mentionedInfo</span> <span style="color:#ce5c00;font-weight:bold">=</span>  <span style="color:#000">mentionedInfo</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -694,7 +659,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/a464e5065069db34c705dc1d6c8d385de42831c8">更新文档 (a464e50)</a>
 </div>
 </div>
 
@@ -768,7 +733,7 @@
         <small class="text-white">&copy; 2020 The Docsy Authors </small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank"></a></small>
 	
-		<p class="mt-2"><a href="/about/">About 狸猫IM</a></p>
+		
 	
       </div>
     </div>
