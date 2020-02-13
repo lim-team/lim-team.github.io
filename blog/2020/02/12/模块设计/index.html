@@ -20,29 +20,23 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>文本消息 | 狸猫IM</title><meta property="og:title" content="文本消息" />
-<meta property="og:description" content="示例:
-// 构建正文  LIMTextContent *content = [[LIMTextContent alloc] initWithContent:@&#34;这是一条测试消息&#34;]; // 发送  [[LIMSDK shared].chatManager sendMessage:content channel:[[LIMChannel alloc] initWith:@&#34;uid&#34; channelType:LIM_PERSON]]; 参数说明:
-   参数 类型 说明     content string 文本内容    " />
+<title>模块设计 | 狸猫IM</title><meta property="og:title" content="模块设计" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/ios/message_send/text/" />
-<meta property="article:published_time" content="2020-02-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-08T00:35:38+08:00" /><meta property="og:site_name" content="狸猫IM" />
-<meta itemprop="name" content="文本消息">
-<meta itemprop="description" content="示例:
-// 构建正文  LIMTextContent *content = [[LIMTextContent alloc] initWithContent:@&#34;这是一条测试消息&#34;]; // 发送  [[LIMSDK shared].chatManager sendMessage:content channel:[[LIMChannel alloc] initWith:@&#34;uid&#34; channelType:LIM_PERSON]]; 参数说明:
-   参数 类型 说明     content string 文本内容    ">
-<meta itemprop="datePublished" content="2020-02-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-02-08T00:35:38&#43;08:00" />
-<meta itemprop="wordCount" content="25">
+<meta property="og:url" content="/blog/2020/02/12/%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1/" />
+<meta property="article:published_time" content="2020-02-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-13T13:09:24+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta itemprop="name" content="模块设计">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2020-02-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-13T13:09:24&#43;08:00" />
+<meta itemprop="wordCount" content="0">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="文本消息"/>
-<meta name="twitter:description" content="示例:
-// 构建正文  LIMTextContent *content = [[LIMTextContent alloc] initWithContent:@&#34;这是一条测试消息&#34;]; // 发送  [[LIMSDK shared].chatManager sendMessage:content channel:[[LIMChannel alloc] initWith:@&#34;uid&#34; channelType:LIM_PERSON]]; 参数说明:
-   参数 类型 说明     content string 文本内容    "/>
+<meta name="twitter:title" content="模块设计"/>
+<meta name="twitter:description" content=""/>
 
 
 
@@ -58,9 +52,9 @@
   crossorigin="anonymous"></script>
 
 
-    <title>文本消息 | 狸猫IM</title>
+    <title>模块设计 | 狸猫IM</title>
   </head>
-  <body class="td-page">
+  <body class="td-page td-blog">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -78,7 +72,17 @@
 				
 				
 				
-				<a class="nav-link active" href="/docs/" ><span class="active">狸猫IM文档</span></a>
+				<a class="nav-link" href="/docs/" ><span>狸猫IM文档</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/blog/" ><span class="active">博客</span></a>
 			</li>
 			
 			
@@ -121,10 +125,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">狸猫IM文档</a>
+    <a  href="/blog/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">博客</a>
   </li>
   <ul>
-    <li class="collapse show" id="docs">
+    <li class="collapse show" id="blog">
       
       
       
@@ -138,17 +142,17 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">概要和介绍</a>
+    <a  href="/blog/limaobase/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LiMaoBase的使用</a>
   </li>
   <ul>
-    <li class="collapse " id="docsoverview">
+    <li class="collapse " id="bloglimaobase">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsoverviewwhat_channel" href="/docs/overview/what_channel/">频道的概念</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-blog20200212e6a682e8a681" href="/blog/2020/02/12/%E6%A6%82%E8%A6%81/">概要</a>
       
       
     </li>
@@ -167,112 +171,35 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/android/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Android端集成与开发</a>
+    <a  href="/blog/limaoimdemo/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">LiMaoIMDemo源码分析(iOS)</a>
   </li>
   <ul>
-    <li class="collapse " id="docsandroid">
+    <li class="collapse show" id="bloglimaoimdemo">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidimport-sdk" href="/docs/android/import-sdk/">导入SDK</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-blog20200212e6a682e8a681e8afb4e6988e" href="/blog/2020/02/12/%E6%A6%82%E8%A6%81%E8%AF%B4%E6%98%8E/">概要说明</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidinit" href="/docs/android/init/">初始化</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-blog20200212e79baee5bd95e7bb93e69e84" href="/blog/2020/02/12/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/">目录结构</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidlogin" href="/docs/android/login/">登录</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-blog20200212e6a8a1e59d97e8aebee8aea1" href="/blog/2020/02/12/%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1/">模块设计</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessage" href="/docs/android/message/">消息收发</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidconversation" href="/docs/android/conversation/">最近会话</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidhistory" href="/docs/android/history/">历史记录</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidchannel" href="/docs/android/channel/">频道管理</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidchannel_provider" href="/docs/android/channel_provider/">频道资料对接</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidoffline_msg" href="/docs/android/offline_msg/">离线消息对接</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/android/advanced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">高级功能</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsandroidadvanced">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedcustom_message" href="/docs/android/advanced/custom_message/">自定义消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedcmd" href="/docs/android/advanced/cmd/">命令消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedmention" href="/docs/android/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedrevoke" href="/docs/android/advanced/revoke/">消息撤回</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-blog20181006the-second-blog-post" href="/blog/2018/10/06/the-second-blog-post/">Second blog post</a>
       
       
     </li>
@@ -291,105 +218,17 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/ios/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">iOS端集成与开发</a>
+    <a  href="/blog/releases/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Releases</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsios">
+    <li class="collapse " id="blogreleases">
       
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosintro" href="/docs/ios/intro/">概要</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosimport-sdk" href="/docs/ios/import-sdk/">导入SDK</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosinit" href="/docs/ios/init/">初始化</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosconnect" href="/docs/ios/connect/">连接与断开</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsioschat_delegate" href="/docs/ios/chat_delegate/">消息监听</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/ios/message_send/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">消息发送</a>
-  </li>
-  <ul>
-    <li class="collapse show" id="docsiosmessage_send">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsiosmessage_sendtext" href="/docs/ios/message_send/text/">文本消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosmessage_sendimage" href="/docs/ios/message_send/image/">图片消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosmessage_sendvoice" href="/docs/ios/message_send/voice/">语音消息</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/ios/conversation/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">最近会话</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsiosconversation">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosconversationreminder" href="/docs/ios/conversation/reminder/">显示提醒</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-blog20180104another-great-release" href="/blog/2018/01/04/another-great-release/">Release New Features</a>
       
       
     </li>
@@ -401,112 +240,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsioshistory" href="/docs/ios/history/">历史记录</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsioschannel" href="/docs/ios/channel/">频道管理</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsioschannel_provider" href="/docs/ios/channel_provider/">频道资料对接</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosoffline_msg" href="/docs/ios/offline_msg/">离线消息对接</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/ios/advanced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">高级功能</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsiosadvanced">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedcustom_message" href="/docs/ios/advanced/custom_message/">自定义消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsiosadvancedmention" href="/docs/ios/advanced/mention/">@消息</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/pc/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PC端集成与开发</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docspc">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/server/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Server端集成与开发</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsserver">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-blog202002121e79baee5bd95e7bb93e69e84" href="/blog/2020/02/12/1.%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/">目录结构</a>
       
       
     </li>
@@ -532,8 +266,8 @@
 
 
 
-<a href="https://github.com/google/docsy-example/edit/master/content/zh/docs/iOS/message_send/text.md" target="_blank"><i class="fa fa-edit fa-fw"></i> </a>
-<a href="https://github.com/google/docsy-example/issues/new?title=%e6%96%87%e6%9c%ac%e6%b6%88%e6%81%af" target="_blank"><i class="fab fa-github fa-fw"></i> </a>
+<a href="https://github.com/google/docsy-example/edit/master/content/zh/blog/LiMaoIMDemo/SourceAnalyse/Module/index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> </a>
+<a href="https://github.com/google/docsy-example/issues/new?title=%e6%a8%a1%e5%9d%97%e8%ae%be%e8%ae%a1" target="_blank"><i class="fab fa-github fa-fw"></i> </a>
 
 
 <a href="https://github.com/google/docsy/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> </a>
@@ -548,143 +282,29 @@
 
 
           </div>
-          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
-            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
-	<ol class="breadcrumb spb-1">
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li class="breadcrumb-item" >
-	<a href="/docs/">狸猫IM文档</a>
-</li>
-
-
-
-
-<li class="breadcrumb-item" >
-	<a href="/docs/ios/">iOS端集成与开发</a>
-</li>
-
-
-
-
-<li class="breadcrumb-item" >
-	<a href="/docs/ios/message_send/">消息发送</a>
-</li>
-
-
-
-
-<li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/ios/message_send/text/">文本消息</a>
-</li>
-
-	</ol>
-</nav	>
-
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5 pr-md-4" role="main">
+            <a class="btn btn-lg -bg-orange td-rss-button d-none d-lg-block" href="/blog/limaoimdemo/index.xml" target="_blank">
+              RSS <i class="fa fa-rss ml-2 "></i>
+            </a>
             
 <div class="td-content">
-	<h1>文本消息</h1>
+	<h1>模块设计</h1>
 	
-	<p>示例:</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Objective-C" data-lang="Objective-C"><span style="color:#8f5902;font-style:italic">// 构建正文
-</span><span style="color:#8f5902;font-style:italic"></span> <span style="color:#000">LIMTextContent</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">content</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMTextContent</span> <span style="color:#000">alloc</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">initWithContent</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">这是一条测试消息</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
- <span style="color:#8f5902;font-style:italic">// 发送
-</span><span style="color:#8f5902;font-style:italic"></span> <span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMSDK</span> <span style="color:#000">shared</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">chatManager</span> <span style="color:#f57900">sendMessage</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">content</span> <span style="color:#f57900">channel</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">LIMChannel</span> <span style="color:#000">alloc</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#f57900">initWith</span><span style="color:#000;font-weight:bold">:</span><span style="color:#4e9a06">@&#34;</span><span style="color:#4e9a06">uid</span><span style="color:#4e9a06">&#34;</span> <span style="color:#f57900">channelType</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LIM_PERSON</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">]</span><span style="color:#000;font-weight:bold">;</span>
+	<div class="td-byline mb-4">
+		 <b>tangtao</b> |
+		<time datetime="2020-02-12" class="text-muted">Wednesday, February 12, 2020</time>
+	</div>
+	
+	
 
-</code></pre></div><p>参数说明:</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>content</td>
-<td>string</td>
-<td>文本内容</td>
-</tr>
-</tbody>
-</table>
+	<ul class="list-unstyled d-flex justify-content-between align-items-center mb-0 pt-5">
+  <li>
+    <a href="/blog/2018/10/06/the-second-blog-post/" class="btn btn-primary "><span class="mr-1">←</span> </a>
+  </li>
+    <a href="/blog/2020/02/12/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" class="btn btn-primary "> <span class="ml-1">→</span></a>
+  </li>
+</ul>
 
-	
-		<style>
-  .feedback--answer {
-    display: inline-block;
-  }
-  .feedback--answer-no {
-    margin-left: 1em;
-  }
-  .feedback--response {
-    display: none;
-    margin-top: 1em;
-  }
-  .feedback--response__visible {
-    display: block;
-  }
-</style>
-<h2 class="feedback--title">Feedback</h2>
-<p class="feedback--question">Was this page helpful?</p>
-<button class="feedback--answer feedback--answer-yes">Yes</button>
-<button class="feedback--answer feedback--answer-no">No</button>
-<p class="feedback--response feedback--response-yes">
-  Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.
-</p>
-<p class="feedback--response feedback--response-no">
-  Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.
-</p>
-<script>
-  const yesButton = document.querySelector('.feedback--answer-yes');
-  const noButton = document.querySelector('.feedback--answer-no');
-  const yesResponse = document.querySelector('.feedback--response-yes');
-  const noResponse = document.querySelector('.feedback--response-no');
-  const disableButtons = () => {
-    yesButton.disabled = true;
-    noButton.disabled = true;
-  };
-  const sendFeedback = (value) => {
-    if (typeof ga !== 'function') return;
-    const args = {
-      command: 'send',
-      hitType: 'event',
-      category: 'Helpful',
-      action: 'click',
-      label: window.location.pathname,
-      value: value
-    };
-    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
-  };
-  yesButton.addEventListener('click', () => {
-    yesResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(1);
-  });
-  noButton.addEventListener('click', () => {
-    noResponse.classList.add('feedback--response__visible');
-    disableButtons();
-    sendFeedback(0);
-  });
-</script>
-
-		<br />
-	
-	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
-</div>
 </div>
 
 
@@ -754,7 +374,7 @@
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2020 The Docsy Authors </small>
+        <small class="text-white">&copy; 2020 狸猫IM </small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank"></a></small>
 	
 		

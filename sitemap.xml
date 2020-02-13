@@ -33,6 +33,26 @@
   </url>
   
   <url>
+    <loc>/blog/limaobase/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/limaoimdemo/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2020/02/12/%E6%A6%82%E8%A6%81/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/releases/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
@@ -43,18 +63,38 @@
   </url>
   
   <url>
+    <loc>/blog/2020/02/12/%E6%A6%82%E8%A6%81%E8%AF%B4%E6%98%8E/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/ios/intro/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/docs/ios/message_send/text/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <loc>/blog/2020/02/12/1.%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2020/02/12/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/ios/messagesend/text/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/ios/import-sdk/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2020/02/12/%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
   
   <url>
@@ -68,8 +108,8 @@
   </url>
   
   <url>
-    <loc>/docs/ios/message_send/image/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <loc>/docs/ios/messagesend/image/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
   
   <url>
@@ -78,8 +118,8 @@
   </url>
   
   <url>
-    <loc>/docs/ios/message_send/voice/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <loc>/docs/ios/messagesend/voice/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
   
   <url>
@@ -98,8 +138,8 @@
   </url>
   
   <url>
-    <loc>/docs/ios/message_send/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <loc>/docs/ios/messagesend/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
   
   <url>
@@ -198,6 +238,21 @@
   </url>
   
   <url>
+    <loc>/docs/ios/limaobase/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2018/10/06/the-second-blog-post/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2018/01/04/another-great-release/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/index.json</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
@@ -205,6 +260,11 @@
   <url>
     <loc>/search/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
   
   <url>

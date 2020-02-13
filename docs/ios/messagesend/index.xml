@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>狸猫IM – 消息发送</title>
-    <link>/docs/ios/message_send/</link>
+    <link>/docs/ios/messagesend/</link>
     <description>Recent content in 消息发送 on 狸猫IM</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 06 Feb 2020 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="/docs/ios/message_send/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/docs/ios/messagesend/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Docs: 文本消息</title>
-      <link>/docs/ios/message_send/text/</link>
+      <link>/docs/ios/messagesend/text/</link>
       <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/docs/ios/message_send/text/</guid>
+      <guid>/docs/ios/messagesend/text/</guid>
       <description>
         
         
@@ -52,10 +52,10 @@
     
     <item>
       <title>Docs: 图片消息</title>
-      <link>/docs/ios/message_send/image/</link>
+      <link>/docs/ios/messagesend/image/</link>
       <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/docs/ios/message_send/image/</guid>
+      <guid>/docs/ios/messagesend/image/</guid>
       <description>
         
         
@@ -88,10 +88,10 @@
     
     <item>
       <title>Docs: 语音消息</title>
-      <link>/docs/ios/message_send/voice/</link>
+      <link>/docs/ios/messagesend/voice/</link>
       <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>/docs/ios/message_send/voice/</guid>
+      <guid>/docs/ios/messagesend/voice/</guid>
       <description>
         
         
