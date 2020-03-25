@@ -18,13 +18,13 @@
   </url>
   
   <url>
-    <loc>/docs/pc/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <loc>/docs/web/</loc>
+    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/server/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
   </url>
   
   <url>
@@ -73,6 +73,16 @@
   </url>
   
   <url>
+    <loc>/docs/web/intro/</loc>
+    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/web/import-sdk/</loc>
+    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/2020/02/12/1.%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
@@ -108,8 +118,18 @@
   </url>
   
   <url>
+    <loc>/docs/web/init/</loc>
+    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/ios/messagesend/image/</loc>
     <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/web/connect/</loc>
+    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
   </url>
   
   <url>
@@ -125,6 +145,11 @@
   <url>
     <loc>/docs/ios/connect/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/web/listener/</loc>
+    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
   </url>
   
   <url>

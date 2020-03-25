@@ -20,21 +20,32 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>命令消息 | 狸猫IM</title><meta property="og:title" content="命令消息" />
-<meta property="og:description" content="" />
+<title>收/发消息 | 狸猫IM</title><meta property="og:title" content="收/发消息" />
+<meta property="og:description" content="收消息 lim.addMessageListener((message)=&gt;{ console.log(&#39;收到消息-&gt;&#39;,message); }); 发消息 lim.sendMessage(payload,channel) // lim.sendMessage({type:1,content:this.msg},{channelID:this.to,channelType:1}) payload： 消息负载 具体见附件 例如文本消息： {type:1,content:&lsquo;hello&rsquo;}
+channel: 接受消息的频道， channelType为频道类型 1.个人频道 2.群聊频道 channelID为频道唯一ID 如果channelType=1则channelID为用户uid 如果channelType=2 channelID为群组唯一ID
+监听发送的消息 // 发送消息 lim.addSendMessageListener((sendPacket)=&gt;{ console.log(&#34;发送消息！&#34;,sendPacket.clientSeq); }); 监听发送消息回执 可以通过监听发送消息回执来判断消息有没有发送成功
+// 发送消息 lim.addMessageStatusListener((sendackPacket)=&gt;{ if(sendackPacket.reasonCode == 1) { console.log(&#34;发送成功！&#34;,sendackPacket.clientSeq); }else { console.log(&#34;发送失败！&#34;,sendackPacket.clientSeq); } }); " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/android/advanced/cmd/" />
-<meta property="article:modified_time" content="2020-02-08T00:35:38+08:00" /><meta property="og:site_name" content="狸猫IM" />
-<meta itemprop="name" content="命令消息">
-<meta itemprop="description" content="">
-<meta itemprop="dateModified" content="2020-02-08T00:35:38&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta property="og:url" content="/docs/web/listener/" />
+<meta property="article:published_time" content="2020-03-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-25T13:24:01+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta itemprop="name" content="收/发消息">
+<meta itemprop="description" content="收消息 lim.addMessageListener((message)=&gt;{ console.log(&#39;收到消息-&gt;&#39;,message); }); 发消息 lim.sendMessage(payload,channel) // lim.sendMessage({type:1,content:this.msg},{channelID:this.to,channelType:1}) payload： 消息负载 具体见附件 例如文本消息： {type:1,content:&lsquo;hello&rsquo;}
+channel: 接受消息的频道， channelType为频道类型 1.个人频道 2.群聊频道 channelID为频道唯一ID 如果channelType=1则channelID为用户uid 如果channelType=2 channelID为群组唯一ID
+监听发送的消息 // 发送消息 lim.addSendMessageListener((sendPacket)=&gt;{ console.log(&#34;发送消息！&#34;,sendPacket.clientSeq); }); 监听发送消息回执 可以通过监听发送消息回执来判断消息有没有发送成功
+// 发送消息 lim.addMessageStatusListener((sendackPacket)=&gt;{ if(sendackPacket.reasonCode == 1) { console.log(&#34;发送成功！&#34;,sendackPacket.clientSeq); }else { console.log(&#34;发送失败！&#34;,sendackPacket.clientSeq); } }); ">
+<meta itemprop="datePublished" content="2020-03-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-25T13:24:01&#43;08:00" />
+<meta itemprop="wordCount" content="43">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="命令消息"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="收/发消息"/>
+<meta name="twitter:description" content="收消息 lim.addMessageListener((message)=&gt;{ console.log(&#39;收到消息-&gt;&#39;,message); }); 发消息 lim.sendMessage(payload,channel) // lim.sendMessage({type:1,content:this.msg},{channelID:this.to,channelType:1}) payload： 消息负载 具体见附件 例如文本消息： {type:1,content:&lsquo;hello&rsquo;}
+channel: 接受消息的频道， channelType为频道类型 1.个人频道 2.群聊频道 channelID为频道唯一ID 如果channelType=1则channelID为用户uid 如果channelType=2 channelID为群组唯一ID
+监听发送的消息 // 发送消息 lim.addSendMessageListener((sendPacket)=&gt;{ console.log(&#34;发送消息！&#34;,sendPacket.clientSeq); }); 监听发送消息回执 可以通过监听发送消息回执来判断消息有没有发送成功
+// 发送消息 lim.addMessageStatusListener((sendackPacket)=&gt;{ if(sendackPacket.reasonCode == 1) { console.log(&#34;发送成功！&#34;,sendackPacket.clientSeq); }else { console.log(&#34;发送失败！&#34;,sendackPacket.clientSeq); } }); "/>
 
 
 
@@ -50,7 +61,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>命令消息 | 狸猫IM</title>
+    <title>收/发消息 | 狸猫IM</title>
   </head>
   <body class="td-page">
     <header>
@@ -169,10 +180,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/android/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Android端集成与开发</a>
+    <a  href="/docs/android/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Android端集成与开发</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsandroid">
+    <li class="collapse " id="docsandroid">
       
       
       
@@ -240,10 +251,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/android/advanced/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">高级功能</a>
+    <a  href="/docs/android/advanced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">高级功能</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsandroidadvanced">
+    <li class="collapse " id="docsandroidadvanced">
       
       
       
@@ -256,7 +267,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsandroidadvancedcmd" href="/docs/android/advanced/cmd/">命令消息</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedcmd" href="/docs/android/advanced/cmd/">命令消息</a>
       
       
       
@@ -498,10 +509,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/web/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Web端集成与开发</a>
+    <a  href="/docs/web/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Web端集成与开发</a>
   </li>
   <ul>
-    <li class="collapse " id="docsweb">
+    <li class="collapse show" id="docsweb">
       
       
       
@@ -532,7 +543,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsweblistener" href="/docs/web/listener/">收/发消息</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsweblistener" href="/docs/web/listener/">收/发消息</a>
       
       
     </li>
@@ -587,8 +598,8 @@
 
 
 
-<a href="https://github.com/google/docsy-example/edit/master/content/zh/docs/Android/Advanced/cmd.md" target="_blank"><i class="fa fa-edit fa-fw"></i> </a>
-<a href="https://github.com/google/docsy-example/issues/new?title=%e5%91%bd%e4%bb%a4%e6%b6%88%e6%81%af" target="_blank"><i class="fab fa-github fa-fw"></i> </a>
+<a href="https://github.com/google/docsy-example/edit/master/content/zh/docs/Web/listener.md" target="_blank"><i class="fa fa-edit fa-fw"></i> </a>
+<a href="https://github.com/google/docsy-example/issues/new?title=%e6%94%b6/%e5%8f%91%e6%b6%88%e6%81%af" target="_blank"><i class="fab fa-github fa-fw"></i> </a>
 
 
 <a href="https://github.com/google/docsy/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> </a>
@@ -617,9 +628,6 @@
 
 
 
-
-
-
 <li class="breadcrumb-item" >
 	<a href="/docs/">狸猫IM文档</a>
 </li>
@@ -628,21 +636,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="/docs/android/">Android端集成与开发</a>
-</li>
-
-
-
-
-<li class="breadcrumb-item" >
-	<a href="/docs/android/advanced/">高级功能</a>
+	<a href="/docs/web/">Web端集成与开发</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/android/advanced/cmd/">命令消息</a>
+	<a href="/docs/web/listener/">收/发消息</a>
 </li>
 
 	</ol>
@@ -650,9 +651,32 @@
 
             
 <div class="td-content">
-	<h1>命令消息</h1>
+	<h1>收/发消息</h1>
 	
-	
+	<h2 id="收消息">收消息</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#000">lim</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addMessageListener</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">message</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;收到消息-&gt;&#39;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">message</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div><h2 id="发消息">发消息</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#000">lim</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sendMessage</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">payload</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">channel</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic">//  lim.sendMessage({type:1,content:this.msg},{channelID:this.to,channelType:1})
+</span></code></pre></div><p>payload： 消息负载 具体见附件 例如文本消息： {type:1,content:&lsquo;hello&rsquo;}</p>
+<p>channel: 接受消息的频道， channelType为频道类型 1.个人频道 2.群聊频道 channelID为频道唯一ID 如果channelType=1则channelID为用户uid 如果channelType=2 channelID为群组唯一ID</p>
+<h4 id="监听发送的消息">监听发送的消息</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#8f5902;font-style:italic">// 发送消息
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">lim</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addSendMessageListener</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendPacket</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;发送消息！&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">sendPacket</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clientSeq</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div><h4 id="监听发送消息回执">监听发送消息回执</h4>
+<p>可以通过监听发送消息回执来判断消息有没有发送成功</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#8f5902;font-style:italic">// 发送消息
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">lim</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addMessageStatusListener</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendackPacket</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">=&gt;</span><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendackPacket</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">reasonCode</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span> 
+        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;发送成功！&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">sendackPacket</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clientSeq</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span><span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;发送失败！&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">sendackPacket</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clientSeq</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -715,7 +739,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> March 25, 2020: <a  href="https://github.com/google/docsy-example/commit/9bdff88e701fadaf50a4f7cd7cfb9849f20c3965">增加web集成方式文档 (9bdff88)</a>
 </div>
 </div>
 

@@ -20,21 +20,29 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>命令消息 | 狸猫IM</title><meta property="og:title" content="命令消息" />
-<meta property="og:description" content="" />
+<title>连接/断开IM | 狸猫IM</title><meta property="og:title" content="连接/断开IM" />
+<meta property="og:description" content="连接IM lim.connect(UID,TOKEN) uid: 服务端返回给客户端的用户唯一ID
+token: 服务端返回给客户端的唯一认证凭证
+断开IM lim.disconnect() 监听连接变化 lim.addConnectStatusListener(status =&gt; { if (status == 1) { console.log(&#34;连接成功！&#34;); } else { console.log(&#34;断开连接！&#34;); } }); " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/android/advanced/cmd/" />
-<meta property="article:modified_time" content="2020-02-08T00:35:38+08:00" /><meta property="og:site_name" content="狸猫IM" />
-<meta itemprop="name" content="命令消息">
-<meta itemprop="description" content="">
-<meta itemprop="dateModified" content="2020-02-08T00:35:38&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta property="og:url" content="/docs/web/connect/" />
+<meta property="article:published_time" content="2020-03-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-25T13:24:01+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta itemprop="name" content="连接/断开IM">
+<meta itemprop="description" content="连接IM lim.connect(UID,TOKEN) uid: 服务端返回给客户端的用户唯一ID
+token: 服务端返回给客户端的唯一认证凭证
+断开IM lim.disconnect() 监听连接变化 lim.addConnectStatusListener(status =&gt; { if (status == 1) { console.log(&#34;连接成功！&#34;); } else { console.log(&#34;断开连接！&#34;); } }); ">
+<meta itemprop="datePublished" content="2020-03-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-25T13:24:01&#43;08:00" />
+<meta itemprop="wordCount" content="24">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="命令消息"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="连接/断开IM"/>
+<meta name="twitter:description" content="连接IM lim.connect(UID,TOKEN) uid: 服务端返回给客户端的用户唯一ID
+token: 服务端返回给客户端的唯一认证凭证
+断开IM lim.disconnect() 监听连接变化 lim.addConnectStatusListener(status =&gt; { if (status == 1) { console.log(&#34;连接成功！&#34;); } else { console.log(&#34;断开连接！&#34;); } }); "/>
 
 
 
@@ -50,7 +58,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>命令消息 | 狸猫IM</title>
+    <title>连接/断开IM | 狸猫IM</title>
   </head>
   <body class="td-page">
     <header>
@@ -169,10 +177,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/android/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Android端集成与开发</a>
+    <a  href="/docs/android/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Android端集成与开发</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsandroid">
+    <li class="collapse " id="docsandroid">
       
       
       
@@ -240,10 +248,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/android/advanced/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">高级功能</a>
+    <a  href="/docs/android/advanced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">高级功能</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsandroidadvanced">
+    <li class="collapse " id="docsandroidadvanced">
       
       
       
@@ -256,7 +264,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsandroidadvancedcmd" href="/docs/android/advanced/cmd/">命令消息</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedcmd" href="/docs/android/advanced/cmd/">命令消息</a>
       
       
       
@@ -498,10 +506,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/web/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Web端集成与开发</a>
+    <a  href="/docs/web/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Web端集成与开发</a>
   </li>
   <ul>
-    <li class="collapse " id="docsweb">
+    <li class="collapse show" id="docsweb">
       
       
       
@@ -526,7 +534,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docswebconnect" href="/docs/web/connect/">连接/断开IM</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docswebconnect" href="/docs/web/connect/">连接/断开IM</a>
       
       
       
@@ -587,8 +595,8 @@
 
 
 
-<a href="https://github.com/google/docsy-example/edit/master/content/zh/docs/Android/Advanced/cmd.md" target="_blank"><i class="fa fa-edit fa-fw"></i> </a>
-<a href="https://github.com/google/docsy-example/issues/new?title=%e5%91%bd%e4%bb%a4%e6%b6%88%e6%81%af" target="_blank"><i class="fab fa-github fa-fw"></i> </a>
+<a href="https://github.com/google/docsy-example/edit/master/content/zh/docs/Web/connect.md" target="_blank"><i class="fa fa-edit fa-fw"></i> </a>
+<a href="https://github.com/google/docsy-example/issues/new?title=%e8%bf%9e%e6%8e%a5/%e6%96%ad%e5%bc%80IM" target="_blank"><i class="fab fa-github fa-fw"></i> </a>
 
 
 <a href="https://github.com/google/docsy/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> </a>
@@ -599,6 +607,14 @@
 
 
 
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#连接im">连接IM</a></li>
+    <li><a href="#断开im">断开IM</a></li>
+    <li><a href="#监听连接变化">监听连接变化</a></li>
+  </ul>
+</nav>
 
 
 
@@ -617,9 +633,6 @@
 
 
 
-
-
-
 <li class="breadcrumb-item" >
 	<a href="/docs/">狸猫IM文档</a>
 </li>
@@ -628,21 +641,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="/docs/android/">Android端集成与开发</a>
-</li>
-
-
-
-
-<li class="breadcrumb-item" >
-	<a href="/docs/android/advanced/">高级功能</a>
+	<a href="/docs/web/">Web端集成与开发</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/android/advanced/cmd/">命令消息</a>
+	<a href="/docs/web/connect/">连接/断开IM</a>
 </li>
 
 	</ol>
@@ -650,9 +656,23 @@
 
             
 <div class="td-content">
-	<h1>命令消息</h1>
+	<h1>连接/断开IM</h1>
 	
-	
+	<h2 id="连接im">连接IM</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#000">lim</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connect</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">UID</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">TOKEN</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><p>uid: 服务端返回给客户端的用户唯一ID</p>
+<p>token: 服务端返回给客户端的唯一认证凭证</p>
+<h2 id="断开im">断开IM</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#000">lim</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">disconnect</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><h2 id="监听连接变化">监听连接变化</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Javascript" data-lang="Javascript"><span style="color:#000">lim</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addConnectStatusListener</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">status</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">status</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;连接成功！&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;断开连接！&#34;</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -715,7 +735,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> March 25, 2020: <a  href="https://github.com/google/docsy-example/commit/9bdff88e701fadaf50a4f7cd7cfb9849f20c3965">增加web集成方式文档 (9bdff88)</a>
 </div>
 </div>
 
