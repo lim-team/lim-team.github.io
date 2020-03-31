@@ -16,7 +16,7 @@
     <item>
       <title>Docs: 概要</title>
       <link>/docs/web/intro/</link>
-      <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/docs/web/intro/</guid>
       <description>
@@ -27,6 +27,7 @@
 &lt;p&gt;第二步：初始化连接配置&lt;/p&gt;
 &lt;p&gt;第三步：连接/断开IM&lt;/p&gt;
 &lt;p&gt;第四步：收/发消息&lt;/p&gt;
+&lt;p&gt;参考 &lt;a href=&#34;https://github.com/lim-team/LiMaoIMWebDemo&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;lim对象&#34;&gt;lim对象&lt;/h2&gt;
 &lt;p&gt;狸猫IM JS SDK主要围绕 lim对象做开发, lim对象主要包含如下部分:&lt;/p&gt;
 &lt;h4 id=&#34;配置参数limoptions&#34;&gt;配置参数(lim.options)&lt;/h4&gt;
@@ -74,7 +75,7 @@
     <item>
       <title>Docs: 初始化</title>
       <link>/docs/web/init/</link>
-      <pubDate>Thu, 06 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>/docs/web/init/</guid>
       <description>

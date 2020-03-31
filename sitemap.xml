@@ -68,13 +68,13 @@
   </url>
   
   <url>
-    <loc>/docs/ios/intro/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <loc>/docs/web/intro/</loc>
+    <lastmod>2020-03-31T19:35:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>/docs/web/intro/</loc>
-    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
+    <loc>/docs/ios/intro/</loc>
+    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
   
   <url>
@@ -108,6 +108,11 @@
   </url>
   
   <url>
+    <loc>/docs/web/init/</loc>
+    <lastmod>2020-03-31T19:35:26+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/android/init/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
@@ -115,11 +120,6 @@
   <url>
     <loc>/docs/ios/init/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/web/init/</loc>
-    <lastmod>2020-03-25T13:24:01+08:00</lastmod>
   </url>
   
   <url>
@@ -268,6 +268,12 @@
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2020-03-31T19:35:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/blog/2018/10/06/the-second-blog-post/</loc>
     <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
@@ -290,11 +296,6 @@
   <url>
     <loc>/blog/</loc>
     <lastmod>2020-02-13T13:09:24+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
   </url>
   
 </urlset>
