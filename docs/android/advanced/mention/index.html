@@ -21,20 +21,20 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>@消息 | 狸猫IM</title><meta property="og:title" content="@消息" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="LiMTextContent textMsgModel = new LiMTextContent(&#34;我是@消息&#34;); //@指定用户 List&lt;LiMUserInfo&gt; list = new ArrayList&lt;&gt;(); list.add(new LiMUserInfo(&#34;uid&#34;,&#34;张三&#34;)); textMsgModel.mentionInfo = list; //@所有人 textMsgModel.mention_all = 1; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/advanced/mention/" />
-<meta property="article:modified_time" content="2020-02-08T00:35:38+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2020-05-18T15:03:22+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="@消息">
-<meta itemprop="description" content="">
-<meta itemprop="dateModified" content="2020-02-08T00:35:38&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="description" content="LiMTextContent textMsgModel = new LiMTextContent(&#34;我是@消息&#34;); //@指定用户 List&lt;LiMUserInfo&gt; list = new ArrayList&lt;&gt;(); list.add(new LiMUserInfo(&#34;uid&#34;,&#34;张三&#34;)); textMsgModel.mentionInfo = list; //@所有人 textMsgModel.mention_all = 1; ">
+<meta itemprop="dateModified" content="2020-05-18T15:03:22&#43;08:00" />
+<meta itemprop="wordCount" content="20">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="@消息"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="LiMTextContent textMsgModel = new LiMTextContent(&#34;我是@消息&#34;); //@指定用户 List&lt;LiMUserInfo&gt; list = new ArrayList&lt;&gt;(); list.add(new LiMUserInfo(&#34;uid&#34;,&#34;张三&#34;)); textMsgModel.mentionInfo = list; //@所有人 textMsgModel.mention_all = 1; "/>
 
 
 
@@ -191,19 +191,83 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidlogin" href="/docs/android/login/">登录</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidlogin" href="/docs/android/login/">连接与断开</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessage" href="/docs/android/message/">消息收发</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessage" href="/docs/android/message/">消息监听</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/android/messagesend/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">消息发送</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsandroidmessagesend">
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidconversation" href="/docs/android/conversation/">最近会话</a>
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessagesendtext" href="/docs/android/messagesend/text/">文本消息</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessagesendimage" href="/docs/android/messagesend/image/">图片消息</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessagesendvoice" href="/docs/android/messagesend/voice/">语音消息</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/android/conversation/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">最近会话</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsandroidconversation">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidconversationreminder" href="/docs/android/conversation/reminder/">显示提醒</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
       
@@ -652,7 +716,15 @@
 <div class="td-content">
 	<h1>@消息</h1>
 	
-	
+	<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMTextContent</span> <span style="color:#000">textMsgModel</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">LiMTextContent</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;我是@消息&#34;</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<span style="color:#8f5902;font-style:italic">//@指定用户
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">List</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">LiMUserInfo</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">list</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">ArrayList</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#ce5c00;font-weight:bold">&gt;</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<span style="color:#000">list</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">add</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">LiMUserInfo</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;uid&#34;</span><span style="color:#ce5c00;font-weight:bold">,</span><span style="color:#4e9a06">&#34;张三&#34;</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<span style="color:#000">textMsgModel</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">mentionInfo</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">list</span><span style="color:#ce5c00;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">//@所有人
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">textMsgModel</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">mention_all</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">1</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -715,7 +787,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> May 18, 2020: <a  href="https://github.com/google/docsy-example/commit/5ca4ca97ab5e66c0bd3ba21a17046eff635dcf9e">编写Android文档 (5ca4ca9)</a>
 </div>
 </div>
 

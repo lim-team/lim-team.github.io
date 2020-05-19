@@ -20,23 +20,23 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>消息收发 | 狸猫IM</title><meta property="og:title" content="消息收发" />
-<meta property="og:description" content="" />
+<title>消息监听 | 狸猫IM</title><meta property="og:title" content="消息监听" />
+<meta property="og:description" content="收到消息监听 LiMaoIm.getInstance().getMessageManager().addNewMsgListener(liMMsgList -&gt; { //liMMsgList 为收到的消息集合  //... todo } 消息更改 LiMaoIm.getInstance().getMessageManager().addSendMsgResultListener((clientSeq, messageID, sendStatus) -&gt; { // clientSeq 消息本地ID  // messageID 服务器ID  // sendStatus 发送结果 返回结果可查看 com.limao.im.limaoimlib.message.type.LiMSendMsgResult  // ... todo  }); " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/message/" />
 <meta property="article:published_time" content="2020-02-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-02-08T00:35:38+08:00" /><meta property="og:site_name" content="狸猫IM" />
-<meta itemprop="name" content="消息收发">
-<meta itemprop="description" content="">
+<meta property="article:modified_time" content="2020-05-18T15:03:22+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta itemprop="name" content="消息监听">
+<meta itemprop="description" content="收到消息监听 LiMaoIm.getInstance().getMessageManager().addNewMsgListener(liMMsgList -&gt; { //liMMsgList 为收到的消息集合  //... todo } 消息更改 LiMaoIm.getInstance().getMessageManager().addSendMsgResultListener((clientSeq, messageID, sendStatus) -&gt; { // clientSeq 消息本地ID  // messageID 服务器ID  // sendStatus 发送结果 返回结果可查看 com.limao.im.limaoimlib.message.type.LiMSendMsgResult  // ... todo  }); ">
 <meta itemprop="datePublished" content="2020-02-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-02-08T00:35:38&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="dateModified" content="2020-05-18T15:03:22&#43;08:00" />
+<meta itemprop="wordCount" content="30">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="消息收发"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="消息监听"/>
+<meta name="twitter:description" content="收到消息监听 LiMaoIm.getInstance().getMessageManager().addNewMsgListener(liMMsgList -&gt; { //liMMsgList 为收到的消息集合  //... todo } 消息更改 LiMaoIm.getInstance().getMessageManager().addSendMsgResultListener((clientSeq, messageID, sendStatus) -&gt; { // clientSeq 消息本地ID  // messageID 服务器ID  // sendStatus 发送结果 返回结果可查看 com.limao.im.limaoimlib.message.type.LiMSendMsgResult  // ... todo  }); "/>
 
 
 
@@ -52,7 +52,7 @@
   crossorigin="anonymous"></script>
 
 
-    <title>消息收发 | 狸猫IM</title>
+    <title>消息监听 | 狸猫IM</title>
   </head>
   <body class="td-page">
     <header>
@@ -193,19 +193,83 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidlogin" href="/docs/android/login/">登录</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidlogin" href="/docs/android/login/">连接与断开</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsandroidmessage" href="/docs/android/message/">消息收发</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsandroidmessage" href="/docs/android/message/">消息监听</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/android/messagesend/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">消息发送</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsandroidmessagesend">
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidconversation" href="/docs/android/conversation/">最近会话</a>
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessagesendtext" href="/docs/android/messagesend/text/">文本消息</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessagesendimage" href="/docs/android/messagesend/image/">图片消息</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidmessagesendvoice" href="/docs/android/messagesend/voice/">语音消息</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/android/conversation/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">最近会话</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsandroidconversation">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidconversationreminder" href="/docs/android/conversation/reminder/">显示提醒</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
       
@@ -590,7 +654,7 @@
 
 
 <a href="https://github.com/google/docsy-example/edit/master/content/zh/docs/Android/message.md" target="_blank"><i class="fa fa-edit fa-fw"></i> </a>
-<a href="https://github.com/google/docsy-example/issues/new?title=%e6%b6%88%e6%81%af%e6%94%b6%e5%8f%91" target="_blank"><i class="fab fa-github fa-fw"></i> </a>
+<a href="https://github.com/google/docsy-example/issues/new?title=%e6%b6%88%e6%81%af%e7%9b%91%e5%90%ac" target="_blank"><i class="fab fa-github fa-fw"></i> </a>
 
 
 <a href="https://github.com/google/docsy/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> </a>
@@ -634,7 +698,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/android/message/">消息收发</a>
+	<a href="/docs/android/message/">消息监听</a>
 </li>
 
 	</ol>
@@ -642,9 +706,21 @@
 
             
 <div class="td-content">
-	<h1>消息收发</h1>
+	<h1>消息监听</h1>
 	
-	
+	<h4 id="收到消息监听">收到消息监听</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getMessageManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">addNewMsgListener</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">liMMsgList</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#ce5c00;font-weight:bold">{</span>
+    <span style="color:#8f5902;font-style:italic">//liMMsgList 为收到的消息集合
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//... todo
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#ce5c00;font-weight:bold">}</span>
+</code></pre></div><h4 id="消息更改">消息更改</h4>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getMessageManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">addSendMsgResultListener</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">clientSeq</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">messageID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">sendStatus</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#ce5c00;font-weight:bold">{</span>
+            <span style="color:#8f5902;font-style:italic">// clientSeq 消息本地ID
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#8f5902;font-style:italic">// messageID 服务器ID
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#8f5902;font-style:italic">// sendStatus 发送结果 返回结果可查看 com.limao.im.limaoimlib.message.type.LiMSendMsgResult
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#8f5902;font-style:italic">// ... todo
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#ce5c00;font-weight:bold">}</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</code></pre></div>
 	
 		<style>
   .feedback--answer {
@@ -707,7 +783,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> February 8, 2020: <a  href="https://github.com/google/docsy-example/commit/ee74a36a3d2314cd6e76be30c4309e4015f9c7ca">初次提交 (ee74a36)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> May 18, 2020: <a  href="https://github.com/google/docsy-example/commit/5ca4ca97ab5e66c0bd3ba21a17046eff635dcf9e">编写Android文档 (5ca4ca9)</a>
 </div>
 </div>
 

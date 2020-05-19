@@ -59,7 +59,7 @@
   
   <url>
     <loc>/docs/android/import-sdk/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -93,6 +93,11 @@
   </url>
   
   <url>
+    <loc>/docs/android/messagesend/text/</loc>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/ios/messagesend/text/</loc>
     <lastmod>2020-02-13T13:09:24+08:00</lastmod>
   </url>
@@ -114,12 +119,17 @@
   
   <url>
     <loc>/docs/android/init/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/ios/init/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/messagesend/image/</loc>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -133,13 +143,18 @@
   </url>
   
   <url>
-    <loc>/docs/android/login/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <loc>/docs/android/messagesend/voice/</loc>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/ios/messagesend/voice/</loc>
     <lastmod>2020-02-13T13:09:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/login/</loc>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -154,12 +169,17 @@
   
   <url>
     <loc>/docs/android/message/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/ios/chat_delegate/</loc>
     <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/messagesend/</loc>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -169,12 +189,17 @@
   
   <url>
     <loc>/docs/android/conversation/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/ios/conversation/</loc>
     <lastmod>2020-02-08T18:49:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/android/conversation/reminder/</loc>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -194,7 +219,7 @@
   
   <url>
     <loc>/docs/android/channel/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -204,7 +229,7 @@
   
   <url>
     <loc>/docs/android/channel_provider/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -234,7 +259,7 @@
   
   <url>
     <loc>/docs/android/advanced/custom_message/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -249,7 +274,7 @@
   
   <url>
     <loc>/docs/android/advanced/mention/</loc>
-    <lastmod>2020-02-08T00:35:38+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
   </url>
   
   <url>
@@ -269,7 +294,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-03-31T19:35:26+08:00</lastmod>
+    <lastmod>2020-05-18T15:03:22+08:00</lastmod>
     <priority>0</priority>
   </url>
   
