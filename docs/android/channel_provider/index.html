@@ -26,13 +26,13 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/channel_provider/" />
 <meta property="article:published_time" content="2020-02-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-18T15:03:22+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2020-09-28T17:39:45+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="频道资料对接">
 <meta itemprop="description" content="LiMaoIm SDK中会判断本地是否有频道资料。如果sdk中没有频道资料会调用上层设置的addGetChannelInfoListener监听来获取指定的频道信息。
 /* * 设置获取频道信息的监听 */ LiMaoIm.getInstance().getLiMEventManager().addGetChannelInfoListener((channelId, channelType, iChannelInfoListenter) -&gt; { if (channelType == LiMChannelType.PERSONAL) { //获取个人信息  ..... } else { //如果上层没有该频道信息则通过接口获取  GroupModel.getInstance().getGroupInfo(channelId, (code, msg, groupEntity) -&gt; { if (code == HttpResponseCode.success &amp;&amp; groupEntity != null) { LiMChannel liMChannel = new LiMChannel(); liMChannel.channel_name = groupEntity.name;//频道名称  liMChannel.channel_id = groupEntity.group_no;//频道ID  liMChannel.channel_type = LiMChannelType.GROUP;//频道类型  liMChannel.mute = groupEntity.mute;//是否免打扰  liMChannel.top = groupEntity.top;//是否置顶  liMChannel.save = groupEntity.save;//是否保存在通讯录  liMChannel.show_nick = groupEntity.">
 <meta itemprop="datePublished" content="2020-02-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-05-18T15:03:22&#43;08:00" />
-<meta itemprop="wordCount" content="71">
+<meta itemprop="dateModified" content="2020-09-28T17:39:45&#43;08:00" />
+<meta itemprop="wordCount" content="83">
 
 
 
@@ -332,12 +332,6 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedmention" href="/docs/android/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedrevoke" href="/docs/android/advanced/revoke/">消息撤回</a>
       
       
     </li>
@@ -718,7 +712,7 @@
     <span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMEventManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">addGetChannelInfoListener</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">iChannelInfoListenter</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#ce5c00;font-weight:bold">{</span>
     <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelType</span> <span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LiMChannelType</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">PERSONAL</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">{</span>
         <span style="color:#8f5902;font-style:italic">//获取个人信息
-</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">.</span>
+</span><span style="color:#8f5902;font-style:italic"></span>       <span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#ce5c00;font-weight:bold">.</span>
     <span style="color:#ce5c00;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#ce5c00;font-weight:bold">{</span>
         <span style="color:#8f5902;font-style:italic">//如果上层没有该频道信息则通过接口获取
 </span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">GroupModel</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getGroupInfo</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">code</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">msg</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">groupEntity</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#ce5c00;font-weight:bold">{</span>
@@ -731,7 +725,11 @@
 </span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#000">liMChannel</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">top</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">groupEntity</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">top</span><span style="color:#ce5c00;font-weight:bold">;</span><span style="color:#8f5902;font-style:italic">//是否置顶
 </span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#000">liMChannel</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">save</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">groupEntity</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">save</span><span style="color:#ce5c00;font-weight:bold">;</span><span style="color:#8f5902;font-style:italic">//是否保存在通讯录
 </span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#000">liMChannel</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">show_nick</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">groupEntity</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">show_nick</span><span style="color:#ce5c00;font-weight:bold">;</span><span style="color:#8f5902;font-style:italic">//是否显示频道成员名称
-</span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#000">iChannelInfoListenter</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">onResult</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">liMChannel</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#8f5902;font-style:italic">//sdk没有的字段可存在扩展字段中
+</span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">String</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">Object</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">hashMap</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HashMap</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#ce5c00;font-weight:bold">&gt;</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+                <span style="color:#000">hashMap</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">put</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;notice&#34;</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">groupEntity</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">notice</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+                <span style="color:#000">liMChannel</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">extraMap</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">hashMap</span><span style="color:#ce5c00;font-weight:bold">;</span>
+                <span style="color:#000">iChannelInfoListenter</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">onResult</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">liMChannel</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
             <span style="color:#ce5c00;font-weight:bold">}</span>
         <span style="color:#ce5c00;font-weight:bold">}</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
     <span style="color:#ce5c00;font-weight:bold">}</span>
@@ -801,7 +799,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> May 18, 2020: <a  href="https://github.com/google/docsy-example/commit/5ca4ca97ab5e66c0bd3ba21a17046eff635dcf9e">编写Android文档 (5ca4ca9)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> September 28, 2020: <a  href="https://github.com/google/docsy-example/commit/56a6f15f1de15c4e5db605c59ba7bf06c2bdd60f">修改Android文档 (56a6f15)</a>
 </div>
 </div>
 

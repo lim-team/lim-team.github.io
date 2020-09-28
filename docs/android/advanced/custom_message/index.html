@@ -23,18 +23,18 @@
 <title>自定义消息 | 狸猫IM</title><meta property="og:title" content="自定义消息" />
 <meta property="og:description" content="为了满足更多的应用场景，狸猫IM提供自定义消息。自定义消息分为三个步骤，这里自定义一个名片消息举例
 1、继承 LiMMessageContent 和定义字段
-public class LiMCardContent extends LiMMessageContent { public LiMCardContent() { //指定消息类型  type = ContentType.card; } //用户ID  public String uid; //用户名称  public String name; //用户头像  public String avatar; } 2、解码和编码
+public class LiMCardContent extends LiMMessageContent { //注意无参构造方法必须写  public LiMCardContent() { //指定消息类型  type = ContentType.card; } //用户ID  public String uid; //用户名称  public String name; //用户头像  public String avatar; } 2、解码和编码
 @Override public JSONObject encodeMsg() { JSONObject jsonObject = new JSONObject(); try { jsonObject.put(&#34;uid&#34;, uid); jsonObject.put(&#34;name&#34;, name); jsonObject.put(&#34;avatar&#34;, avatar); } catch (JSONException e) { e.printStackTrace(); } return jsonObject; } @Override public LiMMessageContent decodeMsg(JSONObject jsonObject) { uid = jsonObject." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/advanced/custom_message/" />
-<meta property="article:modified_time" content="2020-05-18T15:03:22+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2020-09-28T17:39:45+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="自定义消息">
 <meta itemprop="description" content="为了满足更多的应用场景，狸猫IM提供自定义消息。自定义消息分为三个步骤，这里自定义一个名片消息举例
 1、继承 LiMMessageContent 和定义字段
-public class LiMCardContent extends LiMMessageContent { public LiMCardContent() { //指定消息类型  type = ContentType.card; } //用户ID  public String uid; //用户名称  public String name; //用户头像  public String avatar; } 2、解码和编码
+public class LiMCardContent extends LiMMessageContent { //注意无参构造方法必须写  public LiMCardContent() { //指定消息类型  type = ContentType.card; } //用户ID  public String uid; //用户名称  public String name; //用户头像  public String avatar; } 2、解码和编码
 @Override public JSONObject encodeMsg() { JSONObject jsonObject = new JSONObject(); try { jsonObject.put(&#34;uid&#34;, uid); jsonObject.put(&#34;name&#34;, name); jsonObject.put(&#34;avatar&#34;, avatar); } catch (JSONException e) { e.printStackTrace(); } return jsonObject; } @Override public LiMMessageContent decodeMsg(JSONObject jsonObject) { uid = jsonObject.">
-<meta itemprop="dateModified" content="2020-05-18T15:03:22&#43;08:00" />
-<meta itemprop="wordCount" content="83">
+<meta itemprop="dateModified" content="2020-09-28T17:39:45&#43;08:00" />
+<meta itemprop="wordCount" content="85">
 
 
 
@@ -42,7 +42,7 @@ public class LiMCardContent extends LiMMessageContent { public LiMCardContent() 
 <meta name="twitter:title" content="自定义消息"/>
 <meta name="twitter:description" content="为了满足更多的应用场景，狸猫IM提供自定义消息。自定义消息分为三个步骤，这里自定义一个名片消息举例
 1、继承 LiMMessageContent 和定义字段
-public class LiMCardContent extends LiMMessageContent { public LiMCardContent() { //指定消息类型  type = ContentType.card; } //用户ID  public String uid; //用户名称  public String name; //用户头像  public String avatar; } 2、解码和编码
+public class LiMCardContent extends LiMMessageContent { //注意无参构造方法必须写  public LiMCardContent() { //指定消息类型  type = ContentType.card; } //用户ID  public String uid; //用户名称  public String name; //用户头像  public String avatar; } 2、解码和编码
 @Override public JSONObject encodeMsg() { JSONObject jsonObject = new JSONObject(); try { jsonObject.put(&#34;uid&#34;, uid); jsonObject.put(&#34;name&#34;, name); jsonObject.put(&#34;avatar&#34;, avatar); } catch (JSONException e) { e.printStackTrace(); } return jsonObject; } @Override public LiMMessageContent decodeMsg(JSONObject jsonObject) { uid = jsonObject."/>
 
 
@@ -336,12 +336,6 @@ public class LiMCardContent extends LiMMessageContent { public LiMCardContent() 
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedmention" href="/docs/android/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedrevoke" href="/docs/android/advanced/revoke/">消息撤回</a>
       
       
     </li>
@@ -728,7 +722,8 @@ public class LiMCardContent extends LiMMessageContent { public LiMCardContent() 
 	<p>为了满足更多的应用场景，狸猫IM提供自定义消息。自定义消息分为三个步骤，这里自定义一个名片消息举例</p>
 <p>1、继承 LiMMessageContent 和定义字段</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#204a87;font-weight:bold">public</span> <span style="color:#204a87;font-weight:bold">class</span> <span style="color:#000">LiMCardContent</span> <span style="color:#204a87;font-weight:bold">extends</span> <span style="color:#000">LiMMessageContent</span> <span style="color:#ce5c00;font-weight:bold">{</span>
-    <span style="color:#204a87;font-weight:bold">public</span> <span style="color:#000">LiMCardContent</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">{</span>
+    <span style="color:#8f5902;font-style:italic">//注意无参构造方法必须写
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">public</span> <span style="color:#000">LiMCardContent</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">{</span>
         <span style="color:#8f5902;font-style:italic">//指定消息类型
 </span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">type</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ContentType</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">card</span><span style="color:#ce5c00;font-weight:bold">;</span>
     <span style="color:#ce5c00;font-weight:bold">}</span>
@@ -763,7 +758,8 @@ public class LiMCardContent extends LiMMessageContent { public LiMCardContent() 
 
 </code></pre></div><p>3、注册消息</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getMessageManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">registerContentMsg</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">LiMCardContent</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">class</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
-</code></pre></div><p>至此自定义消息已完成。详见demo中 com.limao.im.limkit.chat.msgmodel.LiMCardContent 的具体实现</p>
+</code></pre></div><p>注意：如果定义的消息对象需要进行intent页面传递参数需实现Parcelable的方法</p>
+<p>至此自定义消息已完成。详见demo中 com.limao.im.limkit.chat.msgmodel.LiMCardContent 的具体实现</p>
 
 	
 		<style>
@@ -827,7 +823,7 @@ public class LiMCardContent extends LiMMessageContent { public LiMCardContent() 
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> May 18, 2020: <a  href="https://github.com/google/docsy-example/commit/5ca4ca97ab5e66c0bd3ba21a17046eff635dcf9e">编写Android文档 (5ca4ca9)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> September 28, 2020: <a  href="https://github.com/google/docsy-example/commit/56a6f15f1de15c4e5db605c59ba7bf06c2bdd60f">修改Android文档 (56a6f15)</a>
 </div>
 </div>
 

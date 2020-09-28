@@ -22,16 +22,16 @@
 
 <title>连接与断开 | 狸猫IM</title><meta property="og:title" content="连接与断开" />
 <meta property="og:description" content="//开始连接 LiMaoIm.getInstance().getLiMConnectionManager().startConn(context); //断开连接 isLogout：true[sdk不再重连]，false[sdk会保持重连] LiMaoIm.getInstance().getLiMConnectionManager().disconnect(isLogout); 连接状态监听
-LiMaoIm.getInstance().getLiMEventManager().addConnectionStatusListener(code -&gt; { if (code == LiMConnectStatus.kicked) { //被踢,在其他设备登录  }else if(code == LiMConnectStatus.success){ //连接成功  } }); " />
+LiMaoIm.getInstance().getLiMConnectionManager().addConnectionStatusListener(code -&gt; { if (code == LiMConnectStatus.kicked) { //被踢,在其他设备登录  }else if(code == LiMConnectStatus.success){ //连接成功  } }); " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/login/" />
 <meta property="article:published_time" content="2020-02-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-18T15:03:22+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2020-09-28T17:39:45+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="连接与断开">
 <meta itemprop="description" content="//开始连接 LiMaoIm.getInstance().getLiMConnectionManager().startConn(context); //断开连接 isLogout：true[sdk不再重连]，false[sdk会保持重连] LiMaoIm.getInstance().getLiMConnectionManager().disconnect(isLogout); 连接状态监听
-LiMaoIm.getInstance().getLiMEventManager().addConnectionStatusListener(code -&gt; { if (code == LiMConnectStatus.kicked) { //被踢,在其他设备登录  }else if(code == LiMConnectStatus.success){ //连接成功  } }); ">
+LiMaoIm.getInstance().getLiMConnectionManager().addConnectionStatusListener(code -&gt; { if (code == LiMConnectStatus.kicked) { //被踢,在其他设备登录  }else if(code == LiMConnectStatus.success){ //连接成功  } }); ">
 <meta itemprop="datePublished" content="2020-02-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-05-18T15:03:22&#43;08:00" />
+<meta itemprop="dateModified" content="2020-09-28T17:39:45&#43;08:00" />
 <meta itemprop="wordCount" content="22">
 
 
@@ -39,7 +39,7 @@ LiMaoIm.getInstance().getLiMEventManager().addConnectionStatusListener(code -&gt
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="连接与断开"/>
 <meta name="twitter:description" content="//开始连接 LiMaoIm.getInstance().getLiMConnectionManager().startConn(context); //断开连接 isLogout：true[sdk不再重连]，false[sdk会保持重连] LiMaoIm.getInstance().getLiMConnectionManager().disconnect(isLogout); 连接状态监听
-LiMaoIm.getInstance().getLiMEventManager().addConnectionStatusListener(code -&gt; { if (code == LiMConnectStatus.kicked) { //被踢,在其他设备登录  }else if(code == LiMConnectStatus.success){ //连接成功  } }); "/>
+LiMaoIm.getInstance().getLiMConnectionManager().addConnectionStatusListener(code -&gt; { if (code == LiMConnectStatus.kicked) { //被踢,在其他设备登录  }else if(code == LiMConnectStatus.success){ //连接成功  } }); "/>
 
 
 
@@ -332,12 +332,6 @@ LiMaoIm.getInstance().getLiMEventManager().addConnectionStatusListener(code -&gt
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedmention" href="/docs/android/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedrevoke" href="/docs/android/advanced/revoke/">消息撤回</a>
       
       
     </li>
@@ -717,7 +711,7 @@ LiMaoIm.getInstance().getLiMEventManager().addConnectionStatusListener(code -&gt
 <span style="color:#8f5902;font-style:italic">//断开连接 isLogout：true[sdk不再重连]，false[sdk会保持重连]
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMConnectionManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">disconnect</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">isLogout</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
 </code></pre></div><p>连接状态监听</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMEventManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">addConnectionStatusListener</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">code</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#ce5c00;font-weight:bold">{</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMConnectionManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">addConnectionStatusListener</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">code</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#ce5c00;font-weight:bold">{</span>
         <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">code</span> <span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LiMConnectStatus</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">kicked</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">{</span>
             <span style="color:#8f5902;font-style:italic">//被踢,在其他设备登录
 </span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#ce5c00;font-weight:bold">}</span><span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">code</span> <span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LiMConnectStatus</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">success</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">{</span>
@@ -787,7 +781,7 @@ LiMaoIm.getInstance().getLiMEventManager().addConnectionStatusListener(code -&gt
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> May 18, 2020: <a  href="https://github.com/google/docsy-example/commit/5ca4ca97ab5e66c0bd3ba21a17046eff635dcf9e">编写Android文档 (5ca4ca9)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> September 28, 2020: <a  href="https://github.com/google/docsy-example/commit/56a6f15f1de15c4e5db605c59ba7bf06c2bdd60f">修改Android文档 (56a6f15)</a>
 </div>
 </div>
 

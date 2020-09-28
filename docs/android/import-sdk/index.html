@@ -21,34 +21,37 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>导入SDK | 狸猫IM</title><meta property="og:title" content="导入SDK" />
-<meta property="og:description" content="引入通讯SDK模块 下载 limaoimlib-release.aar 资源包，将文件包放入到自己的app工程的libs文件下 配置app的Gradle文件，配置如下：
-android{ ....... } repositories{ flatDir { dirs&#39;libs&#39; } } dependencies { implementation(name: &#39;limaoimlib-release&#39;, ext: &#39;aar&#39;) } 引入UI相关模块 下载limkit model，将文件夹放入到自己的app模块同级目录 配置项目settinigs.gradle文件，如下：
+<meta property="og:description" content="引入通讯SDK模块 在主程序的build.gradle文件中添加：
+allprojects { repositories { maven { url &#39;https://dl.bintray.com/limaoim/maven&#39; } .... } } 然后在app model中导入
+implementation &#39;com.limao.im.limaoimlib:LiMaoImLib:1.1.2&#39; ... 引入UI相关模块 下载limkit model，将文件夹放入到自己的app模块同级目录 配置项目settinigs.gradle文件，如下：
 include &#39;:app&#39;, &#39;:limkit&#39; 配置app（主）model，如下：
 implementation project(&#39;:limkit&#39;) 在application中初始化limkit
-LimKitApplication.getInstance().initContext(this); " />
+LimKitApplication.getInstance().initLiMKitModule(this); " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/import-sdk/" />
 <meta property="article:published_time" content="2017-01-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-18T15:03:22+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2020-09-28T17:39:45+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="导入SDK">
-<meta itemprop="description" content="引入通讯SDK模块 下载 limaoimlib-release.aar 资源包，将文件包放入到自己的app工程的libs文件下 配置app的Gradle文件，配置如下：
-android{ ....... } repositories{ flatDir { dirs&#39;libs&#39; } } dependencies { implementation(name: &#39;limaoimlib-release&#39;, ext: &#39;aar&#39;) } 引入UI相关模块 下载limkit model，将文件夹放入到自己的app模块同级目录 配置项目settinigs.gradle文件，如下：
+<meta itemprop="description" content="引入通讯SDK模块 在主程序的build.gradle文件中添加：
+allprojects { repositories { maven { url &#39;https://dl.bintray.com/limaoim/maven&#39; } .... } } 然后在app model中导入
+implementation &#39;com.limao.im.limaoimlib:LiMaoImLib:1.1.2&#39; ... 引入UI相关模块 下载limkit model，将文件夹放入到自己的app模块同级目录 配置项目settinigs.gradle文件，如下：
 include &#39;:app&#39;, &#39;:limkit&#39; 配置app（主）model，如下：
 implementation project(&#39;:limkit&#39;) 在application中初始化limkit
-LimKitApplication.getInstance().initContext(this); ">
+LimKitApplication.getInstance().initLiMKitModule(this); ">
 <meta itemprop="datePublished" content="2017-01-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-05-18T15:03:22&#43;08:00" />
-<meta itemprop="wordCount" content="33">
+<meta itemprop="dateModified" content="2020-09-28T17:39:45&#43;08:00" />
+<meta itemprop="wordCount" content="31">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="导入SDK"/>
-<meta name="twitter:description" content="引入通讯SDK模块 下载 limaoimlib-release.aar 资源包，将文件包放入到自己的app工程的libs文件下 配置app的Gradle文件，配置如下：
-android{ ....... } repositories{ flatDir { dirs&#39;libs&#39; } } dependencies { implementation(name: &#39;limaoimlib-release&#39;, ext: &#39;aar&#39;) } 引入UI相关模块 下载limkit model，将文件夹放入到自己的app模块同级目录 配置项目settinigs.gradle文件，如下：
+<meta name="twitter:description" content="引入通讯SDK模块 在主程序的build.gradle文件中添加：
+allprojects { repositories { maven { url &#39;https://dl.bintray.com/limaoim/maven&#39; } .... } } 然后在app model中导入
+implementation &#39;com.limao.im.limaoimlib:LiMaoImLib:1.1.2&#39; ... 引入UI相关模块 下载limkit model，将文件夹放入到自己的app模块同级目录 配置项目settinigs.gradle文件，如下：
 include &#39;:app&#39;, &#39;:limkit&#39; 配置app（主）model，如下：
 implementation project(&#39;:limkit&#39;) 在application中初始化limkit
-LimKitApplication.getInstance().initContext(this); "/>
+LimKitApplication.getInstance().initLiMKitModule(this); "/>
 
 
 
@@ -341,12 +344,6 @@ LimKitApplication.getInstance().initContext(this); "/>
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedmention" href="/docs/android/advanced/mention/">@消息</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsandroidadvancedrevoke" href="/docs/android/advanced/revoke/">消息撤回</a>
       
       
     </li>
@@ -721,20 +718,16 @@ LimKitApplication.getInstance().initContext(this); "/>
 	<h1>导入SDK</h1>
 	
 	<h2 id="引入通讯sdk模块">引入通讯SDK模块</h2>
-<p>下载 limaoimlib-release.aar 资源包，将文件包放入到自己的app工程的libs文件下
-配置app的Gradle文件，配置如下：</p>
-<pre><code>android{
-        .......
+<p>在主程序的build.gradle文件中添加：</p>
+<pre><code>allprojects {
+    repositories {
+        maven { url 'https://dl.bintray.com/limaoim/maven' }
+        ....
+    }
 }
- repositories{
-        flatDir {
-                dirs'libs'
-        }
-}
-
-dependencies {
-    implementation(name: 'limaoimlib-release', ext: 'aar')
-}
+</code></pre><p>然后在app model中导入</p>
+<pre><code>implementation 'com.limao.im.limaoimlib:LiMaoImLib:1.1.2'
+...
 </code></pre><h2 id="引入ui相关模块">引入UI相关模块</h2>
 <p>下载limkit model，将文件夹放入到自己的app模块同级目录
 配置项目settinigs.gradle文件，如下：</p>
@@ -742,7 +735,7 @@ dependencies {
 </code></pre><p>配置app（主）model，如下：</p>
 <pre><code>implementation project(':limkit')
 </code></pre><p>在application中初始化limkit</p>
-<pre><code>LimKitApplication.getInstance().initContext(this);
+<pre><code>LimKitApplication.getInstance().initLiMKitModule(this);
 </code></pre>
 	
 		<style>
@@ -806,7 +799,7 @@ dependencies {
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> May 18, 2020: <a  href="https://github.com/google/docsy-example/commit/5ca4ca97ab5e66c0bd3ba21a17046eff635dcf9e">编写Android文档 (5ca4ca9)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> September 28, 2020: <a  href="https://github.com/google/docsy-example/commit/56a6f15f1de15c4e5db605c59ba7bf06c2bdd60f">修改Android文档 (56a6f15)</a>
 </div>
 </div>
 
