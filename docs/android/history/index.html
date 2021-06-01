@@ -22,27 +22,27 @@
 
 <title>历史记录 | 狸猫IM</title><meta property="og:title" content="历史记录" />
 <meta property="og:description" content="查询指定频道的历史消息记录
-LiMaoIm.getInstance().getMessageManager().getHistoryMsgs(channelId, channelType, maxClientSeq, false, false, pageSize); 参数说明:
-   参数 类型 说明     channelId String 频道ID   channelType byte 频道类型   oldestClientSeq long 上次查询到的最新数据的客户端编号，第一次查询则为0   contain boolean 是否包含最后一条消息clientseq   desc boolean 查询方式 desc或asc   limit int 查询消息数量限制    使用场景查看demo中com.limao.im.limkit.chat.ChatActivity文件" />
+LiMaoIM.getInstance().getLiMMsgManager().getOrSyncHistoryMessages(channelId, channelType, oldestOrderSeq, contain, dropDown, pageSize, new IGetOrSyncHistoryMsgBack() { @Override public void onResult(List&lt;LiMMsg&gt; list) { } }); 参数说明:
+   参数 类型 说明     channelId String 频道ID   channelType byte 频道类型   oldestClientSeq long 上次查询到的最新数据的客户端编号，第一次查询则为0   contain boolean 是否包含最后一条消息clientseq   dropDown boolean true：下拉false：上拉   pageSize int 查询消息数量    " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/history/" />
 <meta property="article:published_time" content="2020-02-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-09-28T17:39:45+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2021-06-01T17:41:33+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="历史记录">
 <meta itemprop="description" content="查询指定频道的历史消息记录
-LiMaoIm.getInstance().getMessageManager().getHistoryMsgs(channelId, channelType, maxClientSeq, false, false, pageSize); 参数说明:
-   参数 类型 说明     channelId String 频道ID   channelType byte 频道类型   oldestClientSeq long 上次查询到的最新数据的客户端编号，第一次查询则为0   contain boolean 是否包含最后一条消息clientseq   desc boolean 查询方式 desc或asc   limit int 查询消息数量限制    使用场景查看demo中com.limao.im.limkit.chat.ChatActivity文件">
+LiMaoIM.getInstance().getLiMMsgManager().getOrSyncHistoryMessages(channelId, channelType, oldestOrderSeq, contain, dropDown, pageSize, new IGetOrSyncHistoryMsgBack() { @Override public void onResult(List&lt;LiMMsg&gt; list) { } }); 参数说明:
+   参数 类型 说明     channelId String 频道ID   channelType byte 频道类型   oldestClientSeq long 上次查询到的最新数据的客户端编号，第一次查询则为0   contain boolean 是否包含最后一条消息clientseq   dropDown boolean true：下拉false：上拉   pageSize int 查询消息数量    ">
 <meta itemprop="datePublished" content="2020-02-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-09-28T17:39:45&#43;08:00" />
-<meta itemprop="wordCount" content="31">
+<meta itemprop="dateModified" content="2021-06-01T17:41:33&#43;08:00" />
+<meta itemprop="wordCount" content="40">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="历史记录"/>
 <meta name="twitter:description" content="查询指定频道的历史消息记录
-LiMaoIm.getInstance().getMessageManager().getHistoryMsgs(channelId, channelType, maxClientSeq, false, false, pageSize); 参数说明:
-   参数 类型 说明     channelId String 频道ID   channelType byte 频道类型   oldestClientSeq long 上次查询到的最新数据的客户端编号，第一次查询则为0   contain boolean 是否包含最后一条消息clientseq   desc boolean 查询方式 desc或asc   limit int 查询消息数量限制    使用场景查看demo中com.limao.im.limkit.chat.ChatActivity文件"/>
+LiMaoIM.getInstance().getLiMMsgManager().getOrSyncHistoryMessages(channelId, channelType, oldestOrderSeq, contain, dropDown, pageSize, new IGetOrSyncHistoryMsgBack() { @Override public void onResult(List&lt;LiMMsg&gt; list) { } }); 参数说明:
+   参数 类型 说明     channelId String 频道ID   channelType byte 频道类型   oldestClientSeq long 上次查询到的最新数据的客户端编号，第一次查询则为0   contain boolean 是否包含最后一条消息clientseq   dropDown boolean true：下拉false：上拉   pageSize int 查询消息数量    "/>
 
 
 
@@ -709,7 +709,12 @@ LiMaoIm.getInstance().getMessageManager().getHistoryMsgs(channelId, channelType,
 	<h1>历史记录</h1>
 	
 	<p>查询指定频道的历史消息记录</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getMessageManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getHistoryMsgs</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">maxClientSeq</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">false</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">pageSize</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIM</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMMsgManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getOrSyncHistoryMessages</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">oldestOrderSeq</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">contain</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">dropDown</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">pageSize</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">IGetOrSyncHistoryMsgBack</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">{</span>
+            <span style="color:#5c35cc;font-weight:bold">@Override</span>
+            <span style="color:#204a87;font-weight:bold">public</span> <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">onResult</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">List</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">LiMMsg</span><span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#000">list</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">{</span>
+                
+            <span style="color:#ce5c00;font-weight:bold">}</span>
+        <span style="color:#ce5c00;font-weight:bold">}</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
 </code></pre></div><p>参数说明:</p>
 <table>
 <thead>
@@ -741,18 +746,17 @@ LiMaoIm.getInstance().getMessageManager().getHistoryMsgs(channelId, channelType,
 <td>是否包含最后一条消息clientseq</td>
 </tr>
 <tr>
-<td>desc</td>
+<td>dropDown</td>
 <td>boolean</td>
-<td>查询方式 desc或asc</td>
+<td>true：下拉false：上拉</td>
 </tr>
 <tr>
-<td>limit</td>
+<td>pageSize</td>
 <td>int</td>
-<td>查询消息数量限制</td>
+<td>查询消息数量</td>
 </tr>
 </tbody>
 </table>
-<p>使用场景查看demo中com.limao.im.limkit.chat.ChatActivity文件</p>
 
 	
 		<style>
@@ -816,7 +820,7 @@ LiMaoIm.getInstance().getMessageManager().getHistoryMsgs(channelId, channelType,
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> September 28, 2020: <a  href="https://github.com/google/docsy-example/commit/56a6f15f1de15c4e5db605c59ba7bf06c2bdd60f">修改Android文档 (56a6f15)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> June 1, 2021: <a  href="https://github.com/google/docsy-example/commit/53fd5b70123770208761f3407dd04706f5084ccb">修改Android文档 (53fd5b7)</a>
 </div>
 </div>
 
@@ -887,7 +891,7 @@ LiMaoIm.getInstance().getMessageManager().getHistoryMsgs(channelId, channelType,
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2020 狸猫IM </small>
+        <small class="text-white">&copy; 2021 狸猫IM </small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank"></a></small>
 	
 		

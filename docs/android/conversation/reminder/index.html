@@ -21,22 +21,25 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>显示提醒 | 狸猫IM</title><meta property="og:title" content="显示提醒" />
-<meta property="og:description" content="在即时通讯软件中有诸多需要显示提醒的内容，如果下图，在狸猫IM中，我们统一抽象为 “提醒”功能。   最近会话提醒对象结构 public class LiMMention { /** * 狸猫IM SDK 目前已经定义了 liMReminderTypeMentionMe [有人@我] * liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型， * 一种相同的类型在最近会话中只会保存最新的提醒 */ public int type; //提醒文本 如：[有人@我]  public String text; //提醒包含的数据 大部分提醒无需数据 所以该字段非必填  public Object data; } 获取频道里指定类型的提醒 LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelID, channelType, LiMMentionType.liMReminderTypeDraft); 追加某个频道的提醒内容 /** * 追加提醒内容 * * @param channelID 频道ID * @param channelType 频道类型 * @param liMReminder 提醒项 */ LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().appendReminder(channelId, channelType, liMReminder); 清除某个频道所有提醒项 LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().clearAllReminder(channelId, channelType); " />
+<meta property="og:description" content="在即时通讯软件中有诸多需要显示提醒的内容，如果下图，在狸猫IM中，我们统一抽象为 “提醒”功能。   最近会话提醒对象结构 public class LiMMention { /** * 狸猫IM SDK 目前已经定义了 LiMMentionType.liMReminderTypeMentionMe [有人@我] * LiMMentionType.liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型， * 一种相同的类型在最近会话中只会保存最新的提醒 */ public int type; //提醒文本 如：[有人@我]  public String text; //提醒包含的数据 大部分提醒无需数据 所以该字段非必填  public Object data; } 获取频道里指定类型的提醒 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelId, channelType, limReminderType); 参数说明:
+   参数 类型 说明     channelID string 频道ID   channelType byte 频道类型   limReminderType int 提醒类型    追加某个频道的提醒内容 /** * 追加提醒内容 * * @param channelID 频道ID * @param channelType 频道类型 * @param liMReminder 提醒项 */ LiMaoIM." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/android/conversation/reminder/" />
 <meta property="article:published_time" content="2020-02-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-18T15:03:22+08:00" /><meta property="og:site_name" content="狸猫IM" />
+<meta property="article:modified_time" content="2021-06-01T17:41:33+08:00" /><meta property="og:site_name" content="狸猫IM" />
 <meta itemprop="name" content="显示提醒">
-<meta itemprop="description" content="在即时通讯软件中有诸多需要显示提醒的内容，如果下图，在狸猫IM中，我们统一抽象为 “提醒”功能。   最近会话提醒对象结构 public class LiMMention { /** * 狸猫IM SDK 目前已经定义了 liMReminderTypeMentionMe [有人@我] * liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型， * 一种相同的类型在最近会话中只会保存最新的提醒 */ public int type; //提醒文本 如：[有人@我]  public String text; //提醒包含的数据 大部分提醒无需数据 所以该字段非必填  public Object data; } 获取频道里指定类型的提醒 LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelID, channelType, LiMMentionType.liMReminderTypeDraft); 追加某个频道的提醒内容 /** * 追加提醒内容 * * @param channelID 频道ID * @param channelType 频道类型 * @param liMReminder 提醒项 */ LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().appendReminder(channelId, channelType, liMReminder); 清除某个频道所有提醒项 LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().clearAllReminder(channelId, channelType); ">
+<meta itemprop="description" content="在即时通讯软件中有诸多需要显示提醒的内容，如果下图，在狸猫IM中，我们统一抽象为 “提醒”功能。   最近会话提醒对象结构 public class LiMMention { /** * 狸猫IM SDK 目前已经定义了 LiMMentionType.liMReminderTypeMentionMe [有人@我] * LiMMentionType.liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型， * 一种相同的类型在最近会话中只会保存最新的提醒 */ public int type; //提醒文本 如：[有人@我]  public String text; //提醒包含的数据 大部分提醒无需数据 所以该字段非必填  public Object data; } 获取频道里指定类型的提醒 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelId, channelType, limReminderType); 参数说明:
+   参数 类型 说明     channelID string 频道ID   channelType byte 频道类型   limReminderType int 提醒类型    追加某个频道的提醒内容 /** * 追加提醒内容 * * @param channelID 频道ID * @param channelType 频道类型 * @param liMReminder 提醒项 */ LiMaoIM.">
 <meta itemprop="datePublished" content="2020-02-06T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-05-18T15:03:22&#43;08:00" />
-<meta itemprop="wordCount" content="65">
+<meta itemprop="dateModified" content="2021-06-01T17:41:33&#43;08:00" />
+<meta itemprop="wordCount" content="78">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="显示提醒"/>
-<meta name="twitter:description" content="在即时通讯软件中有诸多需要显示提醒的内容，如果下图，在狸猫IM中，我们统一抽象为 “提醒”功能。   最近会话提醒对象结构 public class LiMMention { /** * 狸猫IM SDK 目前已经定义了 liMReminderTypeMentionMe [有人@我] * liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型， * 一种相同的类型在最近会话中只会保存最新的提醒 */ public int type; //提醒文本 如：[有人@我]  public String text; //提醒包含的数据 大部分提醒无需数据 所以该字段非必填  public Object data; } 获取频道里指定类型的提醒 LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelID, channelType, LiMMentionType.liMReminderTypeDraft); 追加某个频道的提醒内容 /** * 追加提醒内容 * * @param channelID 频道ID * @param channelType 频道类型 * @param liMReminder 提醒项 */ LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().appendReminder(channelId, channelType, liMReminder); 清除某个频道所有提醒项 LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().clearAllReminder(channelId, channelType); "/>
+<meta name="twitter:description" content="在即时通讯软件中有诸多需要显示提醒的内容，如果下图，在狸猫IM中，我们统一抽象为 “提醒”功能。   最近会话提醒对象结构 public class LiMMention { /** * 狸猫IM SDK 目前已经定义了 LiMMentionType.liMReminderTypeMentionMe [有人@我] * LiMMentionType.liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型， * 一种相同的类型在最近会话中只会保存最新的提醒 */ public int type; //提醒文本 如：[有人@我]  public String text; //提醒包含的数据 大部分提醒无需数据 所以该字段非必填  public Object data; } 获取频道里指定类型的提醒 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelId, channelType, limReminderType); 参数说明:
+   参数 类型 说明     channelID string 频道ID   channelType byte 频道类型   limReminderType int 提醒类型    追加某个频道的提醒内容 /** * 追加提醒内容 * * @param channelID 频道ID * @param channelType 频道类型 * @param liMReminder 提醒项 */ LiMaoIM."/>
 
 
 
@@ -733,8 +736,8 @@
 <h3 id="最近会话提醒对象结构">最近会话提醒对象结构</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#204a87;font-weight:bold">public</span> <span style="color:#204a87;font-weight:bold">class</span> <span style="color:#000">LiMMention</span> <span style="color:#ce5c00;font-weight:bold">{</span>
     <span style="color:#8f5902;font-style:italic">/**
-</span><span style="color:#8f5902;font-style:italic">    * 狸猫IM SDK 目前已经定义了 liMReminderTypeMentionMe [有人@我]
-</span><span style="color:#8f5902;font-style:italic">    * liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型，
+</span><span style="color:#8f5902;font-style:italic">    * 狸猫IM SDK 目前已经定义了 LiMMentionType.liMReminderTypeMentionMe [有人@我]
+</span><span style="color:#8f5902;font-style:italic">    * LiMMentionType.liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型，
 </span><span style="color:#8f5902;font-style:italic">    * 一种相同的类型在最近会话中只会保存最新的提醒
 </span><span style="color:#8f5902;font-style:italic">    */</span>
     <span style="color:#204a87;font-weight:bold">public</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">type</span><span style="color:#ce5c00;font-weight:bold">;</span>
@@ -744,8 +747,35 @@
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">public</span> <span style="color:#000">Object</span> <span style="color:#000">data</span><span style="color:#ce5c00;font-weight:bold">;</span>
 <span style="color:#ce5c00;font-weight:bold">}</span>
 </code></pre></div><h3 id="获取频道里指定类型的提醒">获取频道里指定类型的提醒</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMConversationManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMReminderManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getReminder</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelID</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">LiMMentionType</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">liMReminderTypeDraft</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
-</code></pre></div><h3 id="追加某个频道的提醒内容">追加某个频道的提醒内容</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIM</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMConversationManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMReminderManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getReminder</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">limReminderType</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</code></pre></div><p>参数说明:</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channelID</td>
+<td>string</td>
+<td>频道ID</td>
+</tr>
+<tr>
+<td>channelType</td>
+<td>byte</td>
+<td>频道类型</td>
+</tr>
+<tr>
+<td>limReminderType</td>
+<td>int</td>
+<td>提醒类型</td>
+</tr>
+</tbody>
+</table>
+<h3 id="追加某个频道的提醒内容">追加某个频道的提醒内容</h3>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8f5902;font-style:italic">/**
 </span><span style="color:#8f5902;font-style:italic">* 追加提醒内容
 </span><span style="color:#8f5902;font-style:italic">*
@@ -753,9 +783,9 @@
 </span><span style="color:#8f5902;font-style:italic">* @param channelType 频道类型
 </span><span style="color:#8f5902;font-style:italic">* @param liMReminder 提醒项
 </span><span style="color:#8f5902;font-style:italic">*/</span>
-<span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMConversationManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMReminderManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">appendReminder</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">liMReminder</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<span style="color:#000">LiMaoIM</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMConversationManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMReminderManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">appendReminder</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">liMReminder</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
 </code></pre></div><h3 id="清除某个频道所有提醒项">清除某个频道所有提醒项</h3>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIm</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMConversationManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMReminderManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">clearAllReminder</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000">LiMaoIM</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getInstance</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMConversationManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">getLiMReminderManager</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">.</span><span style="color:#c4a000">clearAllReminder</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#000">channelId</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#000">channelType</span><span style="color:#ce5c00;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">;</span>
 </code></pre></div>
 	
 		<style>
@@ -819,7 +849,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top"> May 18, 2020: <a  href="https://github.com/google/docsy-example/commit/5ca4ca97ab5e66c0bd3ba21a17046eff635dcf9e">编写Android文档 (5ca4ca9)</a>
+	<div class="text-muted mt-5 pt-3 border-top"> June 1, 2021: <a  href="https://github.com/google/docsy-example/commit/53fd5b70123770208761f3407dd04706f5084ccb">修改Android文档 (53fd5b7)</a>
 </div>
 </div>
 
@@ -890,7 +920,7 @@
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2020 狸猫IM </small>
+        <small class="text-white">&copy; 2021 狸猫IM </small>
         <small class="ml-1"><a href="https://policies.google.com/privacy" target="_blank"></a></small>
 	
 		
